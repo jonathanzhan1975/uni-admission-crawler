@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>SJTU JWC</title>
+    <item>
+      <title>关于本科专业调整的通知</title>
+      <link>https://jwc.sjtu.edu.cn/info/1</link>
+      <pubDate>Fri, 01 May 2026 08:00:00 +0800</pubDate>
+      <description>新增专业说明</description>
+    </item>
+    <item>
+      <title>教学会议通知</title>
+      <link>https://jwc.sjtu.edu.cn/info/2</link>
+    </item>
+  </channel>
+</rss>
+

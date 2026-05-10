@@ -1,0 +1,2 @@
+"""University admission crawler package."""
+

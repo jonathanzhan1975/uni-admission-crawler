@@ -1,0 +1,2 @@
+date,prompt_version,recall,precision,notes
+2026-05-10,initial-keyword-gold,1.00,1.00,offline keyword gold set baseline

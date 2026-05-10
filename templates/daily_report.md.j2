@@ -1,0 +1,22 @@
+# 📅 高校招生动态 · {{ report_date }}
+
+> 共 {{ total_count }} 条新消息（来自 {{ university_count }} 所高校）
+
+{% for university in universities %}
+## {{ university }}
+{% if grouped.get(university) %}
+{% for source_name, source_items in grouped[university].items() %}
+### {{ source_name }}
+{% for item in source_items %}
+- [{{ item.title|md }}]({{ item.url|md_url }}) · {{ item.pub_date.strftime("%Y-%m-%d") }}
+{% endfor %}
+{% endfor %}
+{% else %}
+今日无更新
+{% endif %}
+
+{% endfor %}
+---
+*分类降级状态：{{ "LLM 不可用" if classify_degraded else "正常" }}*
+
+*本次运行 ID：{{ run_id }}*
