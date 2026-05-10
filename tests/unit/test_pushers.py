@@ -4,6 +4,7 @@ import httpx
 import logging
 
 from crawler.pushers.lark import LarkPusher
+import crawler.pushers.serverchan as serverchan_module
 from crawler.pushers.serverchan import ServerchanPusher
 
 
@@ -27,8 +28,10 @@ def test_serverchan_title_normalizes_nfc_before_truncating() -> None:
 def test_serverchan_code_nonzero_fails_and_writes_failed(tmp_path, monkeypatch) -> None:
     monkeypatch.chdir(tmp_path)
     monkeypatch.setattr("time.sleep", lambda _: None)
+    calls = []
 
     def fake_post(*args, **kwargs):
+        calls.append(kwargs)
         return httpx.Response(200, json={"code": 1}, request=httpx.Request("POST", "https://example.com"))
 
     monkeypatch.setattr(httpx, "post", fake_post)
@@ -37,7 +40,78 @@ def test_serverchan_code_nonzero_fails_and_writes_failed(tmp_path, monkeypatch) 
     result = pusher.push("body", "title")
 
     assert not result.success
+    assert result.retries == 0
+    assert len(calls) == 1
     assert list((tmp_path / "data" / "failed").glob("*_serverchan.md"))
+
+
+def test_serverchan_4xx_does_not_retry(tmp_path, monkeypatch) -> None:
+    monkeypatch.chdir(tmp_path)
+    calls = []
+
+    def fake_post(url, **kwargs):
+        calls.append(kwargs)
+        return httpx.Response(
+            400,
+            json={"code": 40001, "message": "bad request"},
+            request=httpx.Request("POST", url),
+        )
+
+    monkeypatch.setattr(httpx, "post", fake_post)
+
+    result = ServerchanPusher("SCT_TEST").push("body", "title")
+
+    assert not result.success
+    assert result.retries == 0
+    assert len(calls) == 1
+    assert "code=40001" in (result.error or "")
+
+
+def test_serverchan_429_marks_quota_exhausted_without_retry(tmp_path, monkeypatch) -> None:
+    monkeypatch.chdir(tmp_path)
+    calls = []
+    logs = []
+
+    def fake_post(url, **kwargs):
+        calls.append(kwargs)
+        return httpx.Response(
+            429,
+            json={"code": 429, "message": "daily quota limit exceeded"},
+            request=httpx.Request("POST", url),
+        )
+
+    class FakeLogger:
+        def warning(self, event, **kwargs):
+            logs.append((event, kwargs))
+
+    monkeypatch.setattr(httpx, "post", fake_post)
+    monkeypatch.setattr(serverchan_module, "logger", FakeLogger())
+
+    result = ServerchanPusher("SCT_TEST").push("body", "title")
+
+    assert not result.success
+    assert result.error_kind == "quota_exhausted"
+    assert result.retries == 0
+    assert len(calls) == 1
+    assert logs[-1][1]["error_kind"] == "quota_exhausted"
+
+
+def test_serverchan_5xx_still_retries(tmp_path, monkeypatch) -> None:
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr("time.sleep", lambda _: None)
+    calls = []
+
+    def fake_post(url, **kwargs):
+        calls.append(kwargs)
+        return httpx.Response(503, request=httpx.Request("POST", url))
+
+    monkeypatch.setattr(httpx, "post", fake_post)
+
+    result = ServerchanPusher("SCT_TEST").push("body", "title")
+
+    assert not result.success
+    assert result.retries == 2
+    assert len(calls) == 3
 
 
 def test_serverchan_posts_json_utf8(monkeypatch) -> None:

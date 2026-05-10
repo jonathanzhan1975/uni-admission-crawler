@@ -53,6 +53,7 @@ class PushResult:
     error: Optional[str] = None
     sent_bytes: int = 0
     retries: int = 0
+    error_kind: Optional[str] = None
 
 
 @dataclass
