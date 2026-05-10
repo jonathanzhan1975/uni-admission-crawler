@@ -34,6 +34,20 @@ sources:
     rsshub_path: /tsinghua/news
     needs_classification: true
 
+  - id: S-06
+    type: html
+    university: 清华大学
+    source_name: 本科招办
+    base_url: https://join-tsinghua.edu.cn/
+    needs_classification: false
+
+  - id: S-07
+    type: api
+    university: 上海交通大学
+    source_name: 本科招办
+    base_url: https://admissions.sjtu.edu.cn/
+    needs_classification: false
+
 channels:
   CH-1:
     enabled: false

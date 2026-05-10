@@ -17,7 +17,7 @@ class ChannelConfig:
 @dataclass
 class SourceConfig:
     id: SourceId
-    type: Literal["html", "rsshub"]
+    type: Literal["html", "rsshub", "api"]
     university: str
     source_name: str
     needs_classification: bool
@@ -69,4 +69,3 @@ def load_config(yaml_path: str = "config/config.yaml") -> AppConfig:
         serverchan_sendkey=os.getenv("SERVERCHAN_SENDKEY"),
         google_api_key=os.getenv("GOOGLE_API_KEY"),
     )
-

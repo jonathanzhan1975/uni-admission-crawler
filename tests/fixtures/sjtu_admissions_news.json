@@ -1,0 +1,26 @@
+{
+  "code": 0,
+  "msg": "",
+  "data": {
+    "list": [
+      {
+        "contentsID": 3810000004182,
+        "contentTitle": "上海交通大学2026年强基计划招生简章",
+        "subjectsID": 3810134,
+        "subjectName": "重要资讯",
+        "cTime": "2026-04-13 19:08",
+        "jumpUrl": ""
+      },
+      {
+        "contentsID": 3810000004249,
+        "contentTitle": "上海交通大学2026年插班生招生简章",
+        "subjectsID": 3810134,
+        "subjectName": "重要资讯",
+        "cTime": "2026-05-07 16:18",
+        "jumpUrl": ""
+      }
+    ],
+    "datacount": 926,
+    "pagesum": 78
+  }
+}

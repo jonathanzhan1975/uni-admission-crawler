@@ -13,6 +13,8 @@ from crawler.fetchers.base import BaseFetcher
 from crawler.fetchers.fudan_ao import FudanAoFetcher
 from crawler.fetchers.fudan_gsao import FudanGsaoFetcher
 from crawler.fetchers.rsshub import RsshubFetcher
+from crawler.fetchers.sjtu_admissions import SjtuAdmissionsFetcher
+from crawler.fetchers.tsinghua_zsb import TsinghuaZsbFetcher
 from crawler.logging_setup import setup_logging
 from crawler.pipeline import archive
 from crawler.pipeline.classifier import Classifier
@@ -89,6 +91,10 @@ def _build_fetchers(config: AppConfig) -> list[BaseFetcher]:
             fetchers.append(FudanAoFetcher(source.base_url))
         elif source.id == SourceId.FUDAN_GSAO:
             fetchers.append(FudanGsaoFetcher(source.base_url))
+        elif source.id == SourceId.SJTU_ADMISSIONS:
+            fetchers.append(SjtuAdmissionsFetcher(source.base_url))
+        elif source.id == SourceId.TSINGHUA_ZSB:
+            fetchers.append(TsinghuaZsbFetcher(source.base_url))
         elif source.type == "rsshub" and source.rsshub_path:
             fetchers.append(
                 RsshubFetcher(

@@ -13,6 +13,8 @@ class SourceId(str, Enum):
     SJTU_JWC = "S-03"
     SJTU_YZB = "S-04"
     TSINGHUA_NEWS = "S-05"
+    TSINGHUA_ZSB = "S-06"
+    SJTU_ADMISSIONS = "S-07"
 
 
 class ChannelId(str, Enum):

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 import feedparser
@@ -8,6 +9,8 @@ import pytest
 from crawler.fetchers.fudan_ao import FudanAoFetcher
 from crawler.fetchers.fudan_gsao import FudanGsaoFetcher
 from crawler.fetchers.rsshub import RsshubFetcher
+from crawler.fetchers.sjtu_admissions import SjtuAdmissionsFetcher
+from crawler.fetchers.tsinghua_zsb import TsinghuaZsbFetcher
 from crawler.utils.http import HttpClient
 from crawler.schema import SourceId
 
@@ -107,6 +110,40 @@ def test_rsshub_tsinghua_titles_are_utf8() -> None:
     assert all("�" not in item.title for item in items)
 
 
+def test_tsinghua_zsb_parse_real_announcement_markup() -> None:
+    html = (FIXTURES / "tsinghua_zsb_zygg.html").read_text(encoding="utf-8")
+    fetcher = TsinghuaZsbFetcher()
+
+    items = fetcher._parse_list(html)
+
+    assert len(items) >= 5
+    assert items[0].source_id == SourceId.TSINGHUA_ZSB
+    assert items[0].university == "清华大学"
+    assert items[0].source_name == "本科招办"
+    assert items[0].needs_classification is False
+    assert items[0].title == "清华大学2026年强基计划招生简章"
+    assert items[0].url == "https://join-tsinghua.edu.cn/info/1033/2166.htm"
+    assert items[0].pub_date.year == 2026
+    assert items[0].date_inferred is False
+    assert items[-1].title.endswith("入围认定结果查询通知")
+
+
+def test_sjtu_admissions_parse_api_payload() -> None:
+    payload = json.loads((FIXTURES / "sjtu_admissions_news.json").read_text(encoding="utf-8"))
+    fetcher = SjtuAdmissionsFetcher()
+
+    items = fetcher._parse_payload(payload, max_items=30)
+
+    assert len(items) == 2
+    assert items[0].source_id == SourceId.SJTU_ADMISSIONS
+    assert items[0].university == "上海交通大学"
+    assert items[0].source_name == "本科招办"
+    assert items[0].needs_classification is False
+    assert items[0].title == "上海交通大学2026年强基计划招生简章"
+    assert items[0].url == "https://admissions.sjtu.edu.cn/newDetails?contentsID=3810000004182"
+    assert items[0].date_inferred is False
+
+
 def test_http_client_retries_5xx(monkeypatch) -> None:
     import httpx
 
@@ -141,6 +178,24 @@ def test_http_client_retries_timeout(monkeypatch) -> None:
 
     with pytest.raises(httpx.TimeoutException):
         HttpClient(retries=3).get("https://example.com")
+
+    assert attempts["count"] == 3
+
+
+def test_http_client_post_json_retries_5xx(monkeypatch) -> None:
+    import httpx
+
+    attempts = {"count": 0}
+    monkeypatch.setattr("time.sleep", lambda _: None)
+
+    def fake_post(*args, **kwargs):
+        attempts["count"] += 1
+        return httpx.Response(503, request=httpx.Request("POST", "https://example.com"))
+
+    monkeypatch.setattr(httpx, "post", fake_post)
+
+    with pytest.raises(httpx.HTTPStatusError):
+        HttpClient(retries=3).post_json("https://example.com", {"ok": True})
 
     assert attempts["count"] == 3
 
@@ -204,3 +259,23 @@ def test_live_fudan_fetchers_return_items() -> None:
     assert len(ao.items) > 0
     assert len(gsao.items) > 0
     assert all("找不到对应的栏目" not in item.title for item in ao.items + gsao.items)
+
+
+@pytest.mark.live
+def test_live_tsinghua_zsb_fetcher_returns_items() -> None:
+    result = TsinghuaZsbFetcher().fetch(max_items=30)
+
+    assert result.success, result.error
+    assert len(result.items) > 0
+    assert all(item.source_id == SourceId.TSINGHUA_ZSB for item in result.items)
+    assert all("404错误提示" not in item.title and "系统提示" not in item.title for item in result.items)
+
+
+@pytest.mark.live
+def test_live_sjtu_admissions_fetcher_returns_items() -> None:
+    result = SjtuAdmissionsFetcher().fetch(max_items=30)
+
+    assert result.success, result.error
+    assert len(result.items) > 0
+    assert all(item.source_id == SourceId.SJTU_ADMISSIONS for item in result.items)
+    assert any("招生" in item.title for item in result.items)
