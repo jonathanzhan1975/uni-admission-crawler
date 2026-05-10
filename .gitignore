@@ -19,6 +19,7 @@ venv/
 # 运行时产物
 data/raw/
 data/failed/
+data/last_run.json
 # 注意：data/state.db 需要提交（dedup 状态需跨 Actions 持久化）
 
 # IDE

@@ -21,7 +21,7 @@ def render(
     template_path: str = "templates/daily_report.md.j2",
 ) -> str:
     template_ref = Path(template_path)
-    template_name = str(template_ref if not template_ref.is_absolute() else template_ref.relative_to(PROJECT_ROOT))
+    template_name = (template_ref if not template_ref.is_absolute() else template_ref.relative_to(PROJECT_ROOT)).as_posix()
     env = Environment(
         loader=FileSystemLoader(str(PROJECT_ROOT)),
         autoescape=select_autoescape(disabled_extensions=("j2", "md")),

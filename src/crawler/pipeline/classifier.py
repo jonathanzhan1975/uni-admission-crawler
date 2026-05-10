@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import replace
 import json
+from pathlib import Path
 from typing import Optional
 
 import structlog
@@ -29,6 +30,7 @@ KEYWORDS: list[str] = [
 
 MODEL_NAME = "gemini-2.5-flash"
 logger = structlog.get_logger()
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 def keyword_prefilter(item: Item) -> bool:
@@ -99,5 +101,8 @@ class Classifier:
         return json.loads(value[start : end + 1])
 
     def _load_prompt(self, path: str) -> str:
-        with open(path, "r", encoding="utf-8") as file:
+        prompt_path = Path(path)
+        if not prompt_path.is_absolute() and not prompt_path.exists():
+            prompt_path = PROJECT_ROOT / prompt_path
+        with open(prompt_path, "r", encoding="utf-8") as file:
             return file.read()

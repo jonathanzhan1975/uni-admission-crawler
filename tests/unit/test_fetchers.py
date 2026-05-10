@@ -6,6 +6,7 @@ import feedparser
 import pytest
 
 from crawler.fetchers.fudan_ao import FudanAoFetcher
+from crawler.fetchers.fudan_gsao import FudanGsaoFetcher
 from crawler.fetchers.rsshub import RsshubFetcher
 from crawler.utils.http import HttpClient
 from crawler.schema import SourceId
@@ -24,6 +25,39 @@ def test_fudan_parse_list_normalizes_relative_url() -> None:
     assert items[0].url == "https://ao.fudan.edu.cn/info/1001.htm"
     assert items[0].title == "2026 年本科招生简章发布"
     assert not items[0].date_inferred
+
+
+def test_fudan_parse_real_webplus_list_markup() -> None:
+    html = """
+    <ul class="news_list list2">
+      <li class="news n1 clearfix">
+        <span class="news_title"><a href='/e1/5c/c36330a778588/page.htm' title='复旦大学2026年插班生招生简章'><font>复旦大学2026年插班生招生简章</font></a></span>
+        <span class="news_meta">2026-05-07</span>
+      </li>
+    </ul>
+    """
+    item = FudanAoFetcher()._parse_list(html)[0]
+
+    assert item.title == "复旦大学2026年插班生招生简章"
+    assert item.url == "https://ao.fudan.edu.cn/e1/5c/c36330a778588/page.htm"
+    assert item.pub_date.year == 2026
+    assert item.date_inferred is False
+
+
+def test_fudan_parse_real_gsao_cols_markup() -> None:
+    html = """
+    <ul class="cols_list clearfix">
+      <li class="cols n1">
+        <span class="cols_title"><a href='/df/f4/c15014a778228/page.htm' title='复旦大学部分专业2026年招收博士研究生报名启事'><font>复旦大学部分专业2026年招收博士研究生报名启事</font></a></span>
+        <span class="cols_meta">2026-04-30</span>
+      </li>
+    </ul>
+    """
+    item = FudanAoFetcher(base_url="https://gsao.fudan.edu.cn/")._parse_list(html)[0]
+
+    assert item.title == "复旦大学部分专业2026年招收博士研究生报名启事"
+    assert item.url == "https://gsao.fudan.edu.cn/df/f4/c15014a778228/page.htm"
+    assert item.date_inferred is False
 
 
 def test_fudan_parse_list_changed_markup_returns_empty() -> None:
@@ -158,3 +192,15 @@ def test_fudan_date_uses_span_not_title_date() -> None:
     items = fetcher._parse_list(html)
 
     assert items[0].date_inferred is True
+
+
+@pytest.mark.live
+def test_live_fudan_fetchers_return_items() -> None:
+    ao = FudanAoFetcher().fetch(max_items=30)
+    gsao = FudanGsaoFetcher().fetch(max_items=30)
+
+    assert ao.success, ao.error
+    assert gsao.success, gsao.error
+    assert len(ao.items) > 0
+    assert len(gsao.items) > 0
+    assert all("找不到对应的栏目" not in item.title for item in ao.items + gsao.items)

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 import re
+from typing import ClassVar
 from zoneinfo import ZoneInfo
 
 from bs4 import BeautifulSoup
@@ -26,7 +27,7 @@ class FudanAoFetcher(BaseFetcher):
     DEFAULT_UNIVERSITY = "复旦大学"
     DEFAULT_NEEDS_CLASSIFICATION = False
     BASE_URL = "https://ao.fudan.edu.cn/"
-    LIST_PATH = "/9180/list.htm"
+    LIST_PATHS: ClassVar[tuple[str, ...]] = ("/36330/list.htm", "/36331/list.htm")
 
     def __init__(self, base_url: str | None = None, http_client: HttpClient | None = None):
         self.source_id = self.DEFAULT_SOURCE_ID
@@ -38,9 +39,12 @@ class FudanAoFetcher(BaseFetcher):
 
     def fetch(self, max_items: int = 30) -> FetchResult:
         try:
-            response = self.http_client.get(canonicalize(self.LIST_PATH, self.base_url))
-            save_raw(self.source_id, response.content)
-            items = self._parse_list_bytes(response.content, response.encoding, response.charset_encoding)[:max_items]
+            items: list[Item] = []
+            for path in self.LIST_PATHS:
+                response = self.http_client.get(canonicalize(path, self.base_url))
+                save_raw(self.source_id, response.content)
+                items.extend(self._parse_list_bytes(response.content, response.encoding, response.charset_encoding))
+            items = self._dedupe_items(items)[:max_items]
             logger.info("fetch_success", source_id=self.source_id.value, fetched_count=len(items))
             return FetchResult(self.source_id, items, True)
         except Exception as exc:
@@ -62,7 +66,7 @@ class FudanAoFetcher(BaseFetcher):
         return self._parse_soup(soup)
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[Item]:
-        nodes = soup.select("ul.wp_article_list > li")
+        nodes = soup.select("ul.news_list.list2 > li.news, ul.cols_list > li.cols, ul.wp_article_list > li")
         items: list[Item] = []
         fetched_at = datetime.now(timezone.utc)
         for node in nodes:
@@ -96,13 +100,26 @@ class FudanAoFetcher(BaseFetcher):
         return items
 
     def _extract_date_text(self, node) -> str:
-        date_node = node.select_one("span, time, .date, .wp_article_time, .article-date")
+        date_node = node.select_one(".news_meta, .cols_meta, time, .date, .wp_article_time, .article-date")
+        if date_node is None:
+            spans = node.select("span")
+            date_node = spans[-1] if spans else None
         return date_node.get_text(" ", strip=True) if date_node else ""
 
     def _choose_encoding(self, header_encoding: str | None, detected_encoding: str | None) -> str | None:
         if header_encoding and header_encoding.lower() not in {"iso-8859-1", "latin-1"}:
             return header_encoding
         return detected_encoding
+
+    def _dedupe_items(self, items: list[Item]) -> list[Item]:
+        deduped: list[Item] = []
+        seen: set[str] = set()
+        for item in items:
+            if item.item_id in seen:
+                continue
+            seen.add(item.item_id)
+            deduped.append(item)
+        return deduped
 
     def _extract_date(self, text: str, fetched_at: datetime) -> tuple[datetime, bool]:
         match = re.search(r"(20\d{2}[-/.年]\d{1,2}[-/.月]\d{1,2})", text)

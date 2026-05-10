@@ -48,3 +48,23 @@
 {"title":"博物馆新展览开幕","summary":"文化展览","is_admission":false}
 {"title":"心理健康月活动安排","summary":"咨询讲座","is_admission":false}
 {"title":"食堂菜品价格调整说明","summary":"餐饮服务","is_admission":false}
+{"title":"清华大学2026年强基计划招生简章","summary":"本科招生项目报考条件与选拔安排","is_admission":true,"expected_llm_decision":true,"source_url":"https://join-tsinghua.edu.cn/"}
+{"title":"清华大学2026年艺术类专业（美术学院）艺术能力测试准考证发布通知","summary":"艺术类本科招生考试安排","is_admission":true,"expected_llm_decision":true,"source_url":"https://join-tsinghua.edu.cn/"}
+{"title":"清华大学2026年艺术类专业（美术学院）文化素养测试结果发布通知","summary":"艺术类招生测试结果查询","is_admission":true,"expected_llm_decision":true,"source_url":"https://join-tsinghua.edu.cn/"}
+{"title":"清华大学2026年学科竞赛保送生综合考核准考证发布通知","summary":"保送生选拔考核安排","is_admission":true,"expected_llm_decision":true,"source_url":"https://join-tsinghua.edu.cn/"}
+{"title":"关于清华大学2026年艺术类专业（美术学院）报名的温馨提示","summary":"报名流程和材料提醒","is_admission":true,"expected_llm_decision":true,"source_url":"https://www.admissions.tsinghua.edu.cn/"}
+{"title":"清华大学2026年高水平运动队招生简章","summary":"高水平运动队报考与录取规则","is_admission":true,"expected_llm_decision":true,"source_url":"https://www.admissions.tsinghua.edu.cn/"}
+{"title":"清华大学2026年外语类保送生初试结果查询通知","summary":"保送生选拔初试结果","is_admission":true,"expected_llm_decision":true,"source_url":"https://www.admissions.tsinghua.edu.cn/"}
+{"title":"清华大学2024年自强计划招生简章","summary":"自强计划招生政策","is_admission":true,"expected_llm_decision":false,"source_url":"https://join-tsinghua.edu.cn/"}
+{"title":"清华大学2025年高考录取通知书寄送进度（7月23日）","summary":"高考录取通知书寄送查询","is_admission":true,"expected_llm_decision":false,"source_url":"https://www.admissions.tsinghua.edu.cn/index.htm"}
+{"title":"清华大学2026年丘成桐数学科学领军人才培养计划招生简章","summary":"数学人才培养计划招生安排","is_admission":true,"expected_llm_decision":false,"source_url":"https://www.join-tsinghua.edu.cn/index.htm"}
+{"title":"第一届清华大学本科招生委员会第三次会议召开","summary":"总结招生工作并讨论招生改革","is_admission":false,"expected_llm_decision":true,"source_url":"https://www.tsinghua.edu.cn/info/1181/41735.htm"}
+{"title":"清华大学召开2026年全校宣传工作会议","summary":"部署宣传工作重点","is_admission":false,"expected_llm_decision":false,"source_url":"https://www.sigs.tsinghua.edu.cn/2026/0402/c7626a289956/page.htm"}
+{"title":"清华大学传达学习全国两会精神 召开2026年春季学期第一次全校党员集中培训暨全校教职工大会","summary":"学校建设发展目标任务","is_admission":false,"expected_llm_decision":false,"source_url":"https://www.sigs.tsinghua.edu.cn/2026/0401/c8176a289942/page.psp"}
+{"title":"清华大学2025年招生宣传片《心之所向》","summary":"光影水木招生宣传片展示","is_admission":false,"expected_llm_decision":true,"source_url":"https://www.join-tsinghua.edu.cn/gysm.htm"}
+{"title":"清华大学2024年招生宣传片《奇迹》","summary":"校园形象宣传视频","is_admission":false,"expected_llm_decision":true,"source_url":"https://www.join-tsinghua.edu.cn/gysm.htm"}
+{"title":"清华大学2023年招生宣传片《一千零一天》","summary":"招生宣传片归档页面","is_admission":false,"expected_llm_decision":true,"source_url":"https://www.join-tsinghua.edu.cn/gysm.htm"}
+{"title":"iTsinghua学堂走进安徽省含山中学——王文浩教授专场","summary":"中学科普讲座和大学介绍","is_admission":false,"expected_llm_decision":false,"source_url":"https://join-tsinghua.edu.cn/"}
+{"title":"朱邦芬院士：创造一个小环境，让学生可以“胡思乱想”","summary":"教师访谈与人才培养观点","is_admission":false,"expected_llm_decision":false,"source_url":"https://join-tsinghua.edu.cn/"}
+{"title":"丘成桐：改变刷题模式，培养有想象力的一代","summary":"数学教育观点访谈","is_admission":false,"expected_llm_decision":false,"source_url":"https://join-tsinghua.edu.cn/"}
+{"title":"部分机构冒用清华名义散布不实招生信息 清华大学郑重声明","summary":"提醒考生和家长识别非官方招生信息","is_admission":false,"expected_llm_decision":true,"source_url":"https://news.cctv.cn/2025/12/24/ARTIjbYseK7N9wzSwGWJNBqM251224.shtml"}

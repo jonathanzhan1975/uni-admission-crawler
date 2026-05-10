@@ -40,8 +40,7 @@ channels:
   CH-2:
     enabled: true
 
-rsshub_base_url: https://rsshub.app
+rsshub_base_url: https://rsshub-uni-admission.vercel.app
 timezone: Asia/Shanghai
 max_items_per_source: 30
 raw_retention_days: 30
-
