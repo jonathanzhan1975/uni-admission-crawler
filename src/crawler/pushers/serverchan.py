@@ -69,4 +69,9 @@ class ServerchanPusher(BasePusher):
         return title[: self.MAX_TITLE_CHARS - 1] + "…"
 
     def _redact_error(self, exc: Exception) -> str:
-        return redact_secret(str(exc), self.sendkey)
+        message = str(exc)
+        if isinstance(exc, httpx.HTTPStatusError):
+            response_text = exc.response.text.strip()
+            if response_text:
+                message = f"{message}; response={response_text[:500]}"
+        return redact_secret(message, self.sendkey)
