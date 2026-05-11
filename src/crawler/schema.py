@@ -49,25 +49,16 @@ class Item:
     title: str
     url: str
     pub_date: datetime
-    summary: Optional[str] = None
-    fetched_at: datetime = datetime.now()
-    is_admission: bool = False
-    is_hot: bool = False
+    summary: Optional[str]
+    fetched_at: datetime
     date_inferred: bool = False
-    needs_classification: bool = True
-
-    def to_json(self) -> str:
-        def default(value):
-            if isinstance(value, datetime):
-                return value.isoformat()
-            if isinstance(value, Enum):
-                return value.value
-            raise TypeError(f"Unsupported JSON type: {type(value)!r}")
-
-        return json.dumps(asdict(self), ensure_ascii=False, default=default)
+    needs_classification: bool = False
+    is_admission: Optional[bool] = None
+    classify_reason: Optional[str] = None
+    classify_degraded: bool = False
 
 
-@dataclass(frozen=True)
+@dataclass
 class FetchResult:
     source_id: SourceId
     items: list[Item]
@@ -75,18 +66,28 @@ class FetchResult:
     error: Optional[str] = None
 
 
-@dataclass(frozen=True)
+@dataclass
+class PushResult:
+    channel: ChannelId
+    success: bool
+    error: Optional[str] = None
+    sent_bytes: int = 0
+    retries: int = 0
+    error_kind: Optional[str] = None
+
+
+@dataclass
 class RunReport:
     run_id: str
     started_at: datetime
     fetch_results: list[FetchResult]
     classified_count: int
     deduped_count: int
-    push_results: list[Any]
-    classify_degraded: bool = False
+    push_results: list[PushResult]
+    classify_degraded: bool
 
     def to_json(self) -> str:
-        def default(value):
+        def default(value: object) -> object:
             if isinstance(value, datetime):
                 return value.isoformat()
             if isinstance(value, Enum):
