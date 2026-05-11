@@ -146,6 +146,34 @@ sources:
     base_url: https://www.nudt.edu.cn/
     needs_classification: false
 
+  - id: S-24
+    type: html
+    university: 中山大学
+    source_name: 本科招办
+    base_url: https://admission.sysu.edu.cn/
+    needs_classification: false
+
+  - id: S-25
+    type: html
+    university: 重庆大学
+    source_name: 本科招办
+    base_url: https://zhaosheng.cqu.edu.cn/
+    needs_classification: false
+
+  - id: S-26
+    type: html
+    university: 电子科技大学
+    source_name: 本科招办
+    base_url: https://zs.uestc.edu.cn/
+    needs_classification: false
+
+  - id: S-27
+    type: html
+    university: 兰州大学
+    source_name: 本科招办
+    base_url: https://zsb.lzu.edu.cn/
+    needs_classification: false
+
 channels:
   CH-1:
     enabled: false

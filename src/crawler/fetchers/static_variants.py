@@ -280,3 +280,23 @@ class NudtZsbFetcher(StaticFetcher):
     ITEM_SELECTOR = "ul.article_list li"
     TITLE_SELECTOR = "a"
     DATE_SELECTOR = "span"
+
+class UestcZsbFetcher(StaticFetcher):
+    DEFAULT_SOURCE_ID = SourceId.UESTC_ZSB
+    DEFAULT_SOURCE_NAME = "本科招办"
+    DEFAULT_UNIVERSITY = "电子科技大学"
+    BASE_URL = "https://zs.uestc.edu.cn/"
+    LIST_PATHS = ("/category/7.html",)
+    ITEM_SELECTOR = "li.ellipsis"
+    TITLE_SELECTOR = "a"
+    DATE_SELECTOR = None
+
+class LzuZsbFetcher(StaticFetcher):
+    DEFAULT_SOURCE_ID = SourceId.LZU_ZSB
+    DEFAULT_SOURCE_NAME = "本科招办"
+    DEFAULT_UNIVERSITY = "兰州大学"
+    BASE_URL = "https://zsb.lzu.edu.cn/"
+    LIST_PATHS = ("/zhaoshengdongtai/index.html",)
+    ITEM_SELECTOR = "ol li, ul.news-list li"
+    TITLE_SELECTOR = "a"
+    DATE_SELECTOR = "span"

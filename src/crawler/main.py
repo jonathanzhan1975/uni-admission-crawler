@@ -23,7 +23,7 @@ from crawler.fetchers.static_variants import (
     PkuZsbFetcher, RucZsbFetcher, BuaaZsbFetcher,
     BitZsbFetcher, CauZsbFetcher, TjuZsbFetcher,
     WhuZsbFetcher, HustZsbFetcher, CsuZsbFetcher,
-    NudtZsbFetcher
+    NudtZsbFetcher, UestcZsbFetcher, LzuZsbFetcher
 )
 from crawler.logging_setup import setup_logging
 from crawler.pipeline import archive
@@ -115,6 +115,8 @@ def _build_fetchers(config: AppConfig) -> list[BaseFetcher]:
         SourceId.HUST_ZSB: HustZsbFetcher,
         SourceId.CSU_ZSB: CsuZsbFetcher,
         SourceId.NUDT_ZSB: NudtZsbFetcher,
+        SourceId.UESTC_ZSB: UestcZsbFetcher,
+        SourceId.LZU_ZSB: LzuZsbFetcher,
     }
 
     for source in config.sources:
