@@ -148,31 +148,22 @@ sources:
 
   - id: S-24
     type: html
-    university: 中山大学
-    source_name: 本科招办
-    base_url: https://admission.sysu.edu.cn/
-    needs_classification: false
-
-  - id: S-25
-    type: html
-    university: 重庆大学
-    source_name: 本科招办
-    base_url: https://zhaosheng.cqu.edu.cn/
-    needs_classification: false
-
-  - id: S-26
-    type: html
     university: 电子科技大学
     source_name: 本科招办
     base_url: https://zs.uestc.edu.cn/
     needs_classification: false
 
-  - id: S-27
+  - id: S-25
     type: html
     university: 兰州大学
     source_name: 本科招办
     base_url: https://zsb.lzu.edu.cn/
     needs_classification: false
+
+  # 以下 4 所占位在 c92753a 错误添加，对应 fetcher 尚未实现，已移除避免 SourceId mismatch
+  # - 中山大学 / 重庆大学：之前 Wave 3 误归 SPA，已重新归 Wave 3 Static，待 codex 实现
+  # - 电子科技大学/兰州大学已对齐到 S-24/S-25（匹配 schema UESTC_ZSB/LZU_ZSB）
+  # - 同济大学 (S-26 占位) known_degraded，详见 docs/sources/tongji.md
 
 channels:
   CH-1:

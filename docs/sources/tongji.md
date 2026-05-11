@@ -28,3 +28,13 @@
 - 实施方案: 优先 RSSHub 直接复用
 - CMS 类型: nuxt-spa
 - 实施波次: Wave 1
+
+## 实施警告
+⚠️ **known_degraded**：bkzs.tongji.edu.cn 是高度封装的 Nuxt SPA。
+- 现状：无公开、稳定的 JSON API。
+- 决策：反向工程 ROI 过低，POC 阶段放弃自写爬虫。
+
+## 未来工作
+- 调研方向 1：Playwright/Puppeteer 动态渲染抓取。
+- 调研方向 2： window.__NUXT__ 注水数据的正则提取。
+- 调研方向 3：联系学校或第三方平台寻求数据接口。
