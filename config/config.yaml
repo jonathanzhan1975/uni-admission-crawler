@@ -6,26 +6,12 @@ sources:
     base_url: https://ao.fudan.edu.cn/
     needs_classification: false
 
-  - id: S-02
-    type: html
-    university: 复旦大学
-    source_name: 研招办
-    base_url: https://gsao.fudan.edu.cn/
-    needs_classification: false
-
   - id: S-03
     type: rsshub
     university: 上海交通大学
     source_name: 教务处
     rsshub_path: /sjtu/jwc
     needs_classification: true
-
-  - id: S-04
-    type: rsshub
-    university: 上海交通大学
-    source_name: 研招办
-    rsshub_path: /sjtu/yzb
-    needs_classification: false
 
   - id: S-05
     type: rsshub

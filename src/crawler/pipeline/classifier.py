@@ -17,15 +17,25 @@ KEYWORDS: list[str] = [
     "本科专业",
     "新增专业",
     "招生简章",
-    "推免",
     "强基",
     "综评",
     "选拔",
     "转专业",
     "高考",
+    "报名",
+]
+
+EXCLUDED_KEYWORDS: list[str] = [
+    "研究生",
+    "推免",
     "复试",
     "调剂",
-    "报名",
+    "考研",
+    "博士",
+    "硕士",
+    "MBA",
+    "MPA",
+    "马拉松",
 ]
 
 MODEL_NAME = "gemini-2.5-flash"
@@ -35,6 +45,8 @@ PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def keyword_prefilter(item: Item) -> bool:
     text = f"{item.title}\n{item.summary or ''}"
+    if any(keyword in text for keyword in EXCLUDED_KEYWORDS):
+        return False
     return any(keyword in text for keyword in KEYWORDS)
 
 

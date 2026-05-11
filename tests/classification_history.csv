@@ -1,3 +1,4 @@
 date,prompt_version,recall,precision,notes
 2026-05-10,initial-keyword-gold,1.00,1.00,offline keyword-only baseline before boundary expansion
 2026-05-10,boundary-mock-llm-gold70,0.93,0.88,70-item boundary set with mocked LLM decisions
+2026-05-11,undergraduate-only,0.91,0.85,70-item gold set after graduate admissions relabeled out of POC scope

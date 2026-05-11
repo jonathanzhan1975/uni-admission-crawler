@@ -250,15 +250,12 @@ def test_fudan_date_uses_span_not_title_date() -> None:
 
 
 @pytest.mark.live
-def test_live_fudan_fetchers_return_items() -> None:
+def test_live_fudan_ao_fetcher_returns_items() -> None:
     ao = FudanAoFetcher().fetch(max_items=30)
-    gsao = FudanGsaoFetcher().fetch(max_items=30)
 
     assert ao.success, ao.error
-    assert gsao.success, gsao.error
     assert len(ao.items) > 0
-    assert len(gsao.items) > 0
-    assert all("找不到对应的栏目" not in item.title for item in ao.items + gsao.items)
+    assert all("找不到对应的栏目" not in item.title for item in ao.items)
 
 
 @pytest.mark.live

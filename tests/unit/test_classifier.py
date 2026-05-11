@@ -18,6 +18,12 @@ def test_keyword_known_miss_is_filtered(sample_item) -> None:
     assert not keyword_prefilter(item)
 
 
+def test_keyword_prefilter_excludes_graduate_admissions(sample_item) -> None:
+    item = replace(sample_item, title="博士研究生招生专业目录", summary="报考须知")
+
+    assert not keyword_prefilter(item)
+
+
 def test_classifier_trusted_source_passes_without_llm(sample_item) -> None:
     classifier = Classifier(api_key=None, prompt_path="config/prompts/classifier.txt")
 
