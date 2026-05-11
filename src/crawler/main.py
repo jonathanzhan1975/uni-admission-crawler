@@ -15,6 +15,10 @@ from crawler.fetchers.fudan_gsao import FudanGsaoFetcher
 from crawler.fetchers.rsshub import RsshubFetcher
 from crawler.fetchers.sjtu_admissions import SjtuAdmissionsFetcher
 from crawler.fetchers.tsinghua_zsb import TsinghuaZsbFetcher
+from crawler.fetchers.webplus_variants import (
+    EcnuZsbFetcher, ZjuZsbFetcher, UstcZsbFetcher,
+    OucZsbFetcher, ScutZsbFetcher, NeuZsbFetcher
+)
 from crawler.logging_setup import setup_logging
 from crawler.pipeline import archive
 from crawler.pipeline.classifier import Classifier
@@ -86,6 +90,17 @@ def run(config: AppConfig) -> RunReport:
 
 def _build_fetchers(config: AppConfig) -> list[BaseFetcher]:
     fetchers: list[BaseFetcher] = []
+    
+    # Map SourceId to Fetcher classes for Wave 2 Webplus
+    webplus_map = {
+        SourceId.ECNU_ZSB: EcnuZsbFetcher,
+        SourceId.ZJU_ZSB: ZjuZsbFetcher,
+        SourceId.USTC_ZSB: UstcZsbFetcher,
+        SourceId.OUC_ZSB: OucZsbFetcher,
+        SourceId.SCUT_ZSB: ScutZsbFetcher,
+        SourceId.NEU_ZSB: NeuZsbFetcher,
+    }
+
     for source in config.sources:
         if source.id == SourceId.FUDAN_AO:
             fetchers.append(FudanAoFetcher(source.base_url))
@@ -95,6 +110,8 @@ def _build_fetchers(config: AppConfig) -> list[BaseFetcher]:
             fetchers.append(SjtuAdmissionsFetcher(source.base_url))
         elif source.id == SourceId.TSINGHUA_ZSB:
             fetchers.append(TsinghuaZsbFetcher(source.base_url))
+        elif source.id in webplus_map:
+            fetchers.append(webplus_map[source.id](source.base_url))
         elif source.type == "rsshub" and source.rsshub_path:
             fetchers.append(
                 RsshubFetcher(

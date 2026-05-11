@@ -34,6 +34,48 @@ sources:
     base_url: https://admissions.sjtu.edu.cn/
     needs_classification: false
 
+  - id: S-08
+    type: html
+    university: 华东师范大学
+    source_name: 本科招办
+    base_url: https://zsb.ecnu.edu.cn/
+    needs_classification: false
+
+  - id: S-09
+    type: html
+    university: 浙江大学
+    source_name: 本科招办
+    base_url: http://zdzsc.zju.edu.cn/
+    needs_classification: false
+
+  - id: S-10
+    type: html
+    university: 中国科学技术大学
+    source_name: 本科招办
+    base_url: https://zsb.ustc.edu.cn/
+    needs_classification: false
+
+  - id: S-11
+    type: html
+    university: 中国海洋大学
+    source_name: 本科招办
+    base_url: https://bkzs.ouc.edu.cn/
+    needs_classification: false
+
+  - id: S-12
+    type: html
+    university: 华南理工大学
+    source_name: 本科招办
+    base_url: https://admission.scut.edu.cn/
+    needs_classification: false
+
+  - id: S-13
+    type: html
+    university: 东北大学
+    source_name: 本科招办
+    base_url: http://zs.neu.edu.cn/
+    needs_classification: false
+
 channels:
   CH-1:
     enabled: false
