@@ -40,7 +40,7 @@ class WebplusFetcher(BaseFetcher):
         self.university = self.DEFAULT_UNIVERSITY
         self.needs_classification = self.DEFAULT_NEEDS_CLASSIFICATION
         self.base_url = base_url or self.BASE_URL
-        self.http_client = http_client or HttpClient()
+        self.http_client = http_client or HttpClient(verify=False)
 
     def fetch(self, max_items: int = 30) -> FetchResult:
         try:

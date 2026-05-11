@@ -35,7 +35,7 @@ class StaticFetcher(BaseFetcher):
         self.university = self.DEFAULT_UNIVERSITY
         self.needs_classification = self.DEFAULT_NEEDS_CLASSIFICATION
         self.base_url = base_url or self.BASE_URL
-        self.http_client = http_client or HttpClient()
+        self.http_client = http_client or HttpClient(verify=False)
 
     def fetch(self, max_items: int = 30) -> FetchResult:
         try:
@@ -300,3 +300,33 @@ class LzuZsbFetcher(StaticFetcher):
     ITEM_SELECTOR = "ol li, ul.news-list li"
     TITLE_SELECTOR = "a"
     DATE_SELECTOR = "span"
+
+class SysuZsbFetcher(StaticFetcher):
+    DEFAULT_SOURCE_ID = SourceId.SYSU_ZSB
+    DEFAULT_SOURCE_NAME = "本科招办"
+    DEFAULT_UNIVERSITY = "中山大学"
+    BASE_URL = "https://admission.sysu.edu.cn/"
+    LIST_PATHS = ("/",)
+    ITEM_SELECTOR = "ul.left_box li"
+    TITLE_SELECTOR = "a"
+    DATE_SELECTOR = "span"
+
+class CquZsbFetcher(StaticFetcher):
+    DEFAULT_SOURCE_ID = SourceId.CQU_ZSB
+    DEFAULT_SOURCE_NAME = "本科招办"
+    DEFAULT_UNIVERSITY = "重庆大学"
+    BASE_URL = "https://zhaosheng.cqu.edu.cn/"
+    LIST_PATHS = ("/",)
+    ITEM_SELECTOR = "ul.datenews li"
+    TITLE_SELECTOR = "a"
+    DATE_SELECTOR = "span"
+
+class SduZsbFetcher(StaticFetcher):
+    DEFAULT_SOURCE_ID = SourceId.SDU_ZSB
+    DEFAULT_SOURCE_NAME = "本科招办"
+    DEFAULT_UNIVERSITY = "山东大学"
+    BASE_URL = "https://www.bkzs.sdu.edu.cn/"
+    LIST_PATHS = ("/",)
+    ITEM_SELECTOR = "#tab_a1 li"
+    TITLE_SELECTOR = ".tit a"
+    DATE_SELECTOR = ".date"

@@ -13,17 +13,18 @@ DEFAULT_HEADERS = {
 
 
 class HttpClient:
-    def __init__(self, timeout: float = 10.0, retries: int = 3, backoffs: tuple[float, ...] = (10.0, 30.0, 90.0)):
+    def __init__(self, timeout: float = 10.0, retries: int = 3, backoffs: tuple[float, ...] = (10.0, 30.0, 90.0), verify: bool = True):
         self.timeout = timeout
         self.retries = retries
         self.backoffs = backoffs
+        self.verify = verify
 
     def get(self, url: str, headers: Mapping[str, str] | None = None) -> httpx.Response:
         merged_headers = {**DEFAULT_HEADERS, **dict(headers or {})}
         last_error: Exception | None = None
         for attempt in range(self.retries):
             try:
-                response = httpx.get(url, headers=merged_headers, timeout=self.timeout, follow_redirects=True)
+                response = httpx.get(url, headers=merged_headers, timeout=self.timeout, follow_redirects=True, verify=self.verify)
                 response.raise_for_status()
                 return response
             except (httpx.HTTPError, httpx.TimeoutException) as exc:
@@ -49,6 +50,7 @@ class HttpClient:
                     headers=merged_headers,
                     timeout=self.timeout,
                     follow_redirects=True,
+                    verify=self.verify,
                 )
                 response.raise_for_status()
                 return response

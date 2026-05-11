@@ -30,3 +30,11 @@
 - 实施方案: 优先自写 Fetcher
 - CMS 类型: static
 - 实施波次: Wave 3
+
+## 实施警告
+⚠️ **known_degraded**：北京师范大学招生网列表页由客户端 JS 渲染。
+- 现状：无静态 HTML 列表。
+- 决策：POC 阶段降级跳过。
+
+## 未来工作
+- 调研方向：Playwright。
