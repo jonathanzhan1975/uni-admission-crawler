@@ -35,7 +35,6 @@ EXCLUDED_KEYWORDS: list[str] = [
     "硕士",
     "MBA",
     "MPA",
-    "马拉松",
 ]
 
 MODEL_NAME = "gemini-2.5-flash"
