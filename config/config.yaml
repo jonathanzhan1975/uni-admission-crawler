@@ -76,6 +76,41 @@ sources:
     base_url: http://zs.neu.edu.cn/
     needs_classification: false
 
+  - id: S-14
+    type: html
+    university: 北京大学
+    source_name: 本科招办
+    base_url: https://admission.pku.edu.cn/
+    needs_classification: false
+
+  - id: S-15
+    type: html
+    university: 中国人民大学
+    source_name: 本科招办
+    base_url: https://rdzs.ruc.edu.cn/
+    needs_classification: false
+
+  - id: S-16
+    type: html
+    university: 北京航空航天大学
+    source_name: 本科招办
+    base_url: https://zs.buaa.edu.cn/
+    needs_classification: false
+
+  - id: S-17
+    type: html
+    university: 北京理工大学
+    source_name: 本科招办
+    base_url: https://admission.bit.edu.cn/
+    needs_classification: false
+
+  - id: S-18
+    type: html
+    university: 中国农业大学
+    source_name: 本科招办
+    base_url: https://jwzs.cau.edu.cn/
+    needs_classification: false
+
 channels:
   CH-1:
     enabled: false

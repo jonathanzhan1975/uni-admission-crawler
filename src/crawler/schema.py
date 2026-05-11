@@ -21,6 +21,11 @@ class SourceId(str, Enum):
     OUC_ZSB = "S-11"
     SCUT_ZSB = "S-12"
     NEU_ZSB = "S-13"
+    PKU_ZSB = "S-14"
+    RUC_ZSB = "S-15"
+    BUAA_ZSB = "S-16"
+    BIT_ZSB = "S-17"
+    CAU_ZSB = "S-18"
 
 
 class ChannelId(str, Enum):

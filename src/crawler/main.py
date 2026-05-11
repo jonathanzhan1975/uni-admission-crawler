@@ -19,6 +19,10 @@ from crawler.fetchers.webplus_variants import (
     EcnuZsbFetcher, ZjuZsbFetcher, UstcZsbFetcher,
     OucZsbFetcher, ScutZsbFetcher, NeuZsbFetcher
 )
+from crawler.fetchers.static_variants import (
+    PkuZsbFetcher, RucZsbFetcher, BuaaZsbFetcher,
+    BitZsbFetcher, CauZsbFetcher
+)
 from crawler.logging_setup import setup_logging
 from crawler.pipeline import archive
 from crawler.pipeline.classifier import Classifier
@@ -99,6 +103,11 @@ def _build_fetchers(config: AppConfig) -> list[BaseFetcher]:
         SourceId.OUC_ZSB: OucZsbFetcher,
         SourceId.SCUT_ZSB: ScutZsbFetcher,
         SourceId.NEU_ZSB: NeuZsbFetcher,
+        SourceId.PKU_ZSB: PkuZsbFetcher,
+        SourceId.RUC_ZSB: RucZsbFetcher,
+        SourceId.BUAA_ZSB: BuaaZsbFetcher,
+        SourceId.BIT_ZSB: BitZsbFetcher,
+        SourceId.CAU_ZSB: CauZsbFetcher,
     }
 
     for source in config.sources:
