@@ -111,6 +111,41 @@ sources:
     base_url: https://jwzs.cau.edu.cn/
     needs_classification: false
 
+  - id: S-19
+    type: html
+    university: 天津大学
+    source_name: 本科招办
+    base_url: https://zs.tju.edu.cn/
+    needs_classification: false
+
+  - id: S-20
+    type: html
+    university: 武汉大学
+    source_name: 本科招办
+    base_url: https://aoff.whu.edu.cn/
+    needs_classification: false
+
+  - id: S-21
+    type: html
+    university: 华中科技大学
+    source_name: 本科招办
+    base_url: https://zsb.hust.edu.cn/
+    needs_classification: false
+
+  - id: S-22
+    type: html
+    university: 中南大学
+    source_name: 本科招办
+    base_url: https://zhaosheng.csu.edu.cn/
+    needs_classification: false
+
+  - id: S-23
+    type: html
+    university: 国防科技大学
+    source_name: 本科招办
+    base_url: https://www.nudt.edu.cn/
+    needs_classification: false
+
 channels:
   CH-1:
     enabled: false

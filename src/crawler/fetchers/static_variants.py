@@ -8,13 +8,12 @@ from crawler.utils.text import clean_text
 from crawler.utils.url import canonicalize, item_id_for_url
 from datetime import datetime, timezone
 from bs4 import BeautifulSoup
+from crawler.utils.time import APP_TZ
 import re
 from dateutil import parser as date_parser
-from zoneinfo import ZoneInfo
 import structlog
 
 logger = structlog.get_logger()
-CN_TZ = ZoneInfo("Asia/Shanghai")
 
 class StaticFetcher(BaseFetcher):
     """Generic fetcher for static HTML lists with customizable selectors."""
@@ -117,8 +116,8 @@ class StaticFetcher(BaseFetcher):
             raw = match.group(1).replace("年", "-").replace("月", "-").replace("日", "")
         
         try:
-            return date_parser.parse(raw).replace(tzinfo=ZoneInfo("Asia/Shanghai")), False
-        except:
+            return date_parser.parse(raw).replace(tzinfo=APP_TZ), False
+        except (ValueError, TypeError, OverflowError):
             return fetched_at, True
 
 class PkuZsbFetcher(StaticFetcher):
@@ -214,7 +213,6 @@ class CauZsbFetcher(StaticFetcher):
             pub_date = fetched_at
             inferred = True
             if date_node:
-                # 5 06
                 dt_txt = date_node.get_text(" ", strip=True)
                 pub_date, inferred = self._extract_date(dt_txt, fetched_at)
                 
@@ -232,3 +230,53 @@ class CauZsbFetcher(StaticFetcher):
                 needs_classification=self.needs_classification
             ))
         return items
+
+class TjuZsbFetcher(StaticFetcher):
+    DEFAULT_SOURCE_ID = SourceId.TJU_ZSB
+    DEFAULT_SOURCE_NAME = "本科招办"
+    DEFAULT_UNIVERSITY = "天津大学"
+    BASE_URL = "https://zs.tju.edu.cn/"
+    LIST_PATHS = ("/ym21/bkzn/tzgg.htm",)
+    ITEM_SELECTOR = "ul.clear li"
+    TITLE_SELECTOR = "a"
+    DATE_SELECTOR = "span"
+
+class WhuZsbFetcher(StaticFetcher):
+    DEFAULT_SOURCE_ID = SourceId.WHU_ZSB
+    DEFAULT_SOURCE_NAME = "本科招办"
+    DEFAULT_UNIVERSITY = "武汉大学"
+    BASE_URL = "https://aoff.whu.edu.cn/"
+    LIST_PATHS = ("/zsxx1/tzgg.htm",)
+    ITEM_SELECTOR = "li.wow.slideInUp"
+    TITLE_SELECTOR = "a"
+    DATE_SELECTOR = "span"
+
+class HustZsbFetcher(StaticFetcher):
+    DEFAULT_SOURCE_ID = SourceId.HUST_ZSB
+    DEFAULT_SOURCE_NAME = "本科招办"
+    DEFAULT_UNIVERSITY = "华中科技大学"
+    BASE_URL = "https://zsb.hust.edu.cn/"
+    LIST_PATHS = ("/bkzn/tzgg.htm",)
+    ITEM_SELECTOR = "li.list-item"
+    TITLE_SELECTOR = "a"
+    DATE_SELECTOR = "span"
+
+class CsuZsbFetcher(StaticFetcher):
+    DEFAULT_SOURCE_ID = SourceId.CSU_ZSB
+    DEFAULT_SOURCE_NAME = "本科招办"
+    DEFAULT_UNIVERSITY = "中南大学"
+    BASE_URL = "https://zhaosheng.csu.edu.cn/"
+    LIST_PATHS = ("/zsjz1.htm", "/zszx/zszx.htm")
+    ITEM_SELECTOR = "div.zsjz-list li"
+    TITLE_SELECTOR = "a"
+    DATE_SELECTOR = "span"
+
+class NudtZsbFetcher(StaticFetcher):
+    DEFAULT_SOURCE_ID = SourceId.NUDT_ZSB
+    DEFAULT_SOURCE_NAME = "本科招办"
+    DEFAULT_UNIVERSITY = "国防科技大学"
+    BASE_URL = "https://www.nudt.edu.cn/"
+    LIST_PATHS = ("/bkzs/xxgk/tzgg/index.htm",)
+    ITEM_SELECTOR = "ul.article_list li"
+    TITLE_SELECTOR = "a"
+    DATE_SELECTOR = "span"

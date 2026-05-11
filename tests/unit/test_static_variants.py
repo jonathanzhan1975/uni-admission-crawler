@@ -2,7 +2,9 @@ from __future__ import annotations
 
 from crawler.fetchers.static_variants import (
     PkuZsbFetcher, RucZsbFetcher, BuaaZsbFetcher,
-    BitZsbFetcher, CauZsbFetcher
+    BitZsbFetcher, CauZsbFetcher, TjuZsbFetcher,
+    WhuZsbFetcher, HustZsbFetcher, CsuZsbFetcher,
+    NudtZsbFetcher
 )
 import pytest
 
@@ -34,5 +36,35 @@ def test_live_bit_zsb_fetcher() -> None:
 @pytest.mark.live
 def test_live_cau_zsb_fetcher() -> None:
     result = CauZsbFetcher().fetch(max_items=5)
+    assert result.success, result.error
+    assert len(result.items) > 0
+
+@pytest.mark.live
+def test_live_tju_zsb_fetcher() -> None:
+    result = TjuZsbFetcher().fetch(max_items=5)
+    assert result.success, result.error
+    assert len(result.items) > 0
+
+@pytest.mark.live
+def test_live_whu_zsb_fetcher() -> None:
+    result = WhuZsbFetcher().fetch(max_items=5)
+    assert result.success, result.error
+    assert len(result.items) > 0
+
+@pytest.mark.live
+def test_live_hust_zsb_fetcher() -> None:
+    result = HustZsbFetcher().fetch(max_items=5)
+    assert result.success, result.error
+    assert len(result.items) > 0
+
+@pytest.mark.live
+def test_live_csu_zsb_fetcher() -> None:
+    result = CsuZsbFetcher().fetch(max_items=5)
+    assert result.success, result.error
+    assert len(result.items) > 0
+
+@pytest.mark.live
+def test_live_nudt_zsb_fetcher() -> None:
+    result = NudtZsbFetcher().fetch(max_items=5)
     assert result.success, result.error
     assert len(result.items) > 0
