@@ -1,0 +1,2232 @@
+[
+  {
+    "university": "北京大学",
+    "namespace": "pku",
+    "rsshub_status": "unavailable",
+    "routes_available": [
+      "bbs",
+      "cls",
+      "eecs",
+      "hr",
+      "nsd",
+      "pkuyjs",
+      "rccp",
+      "scc",
+      "ss",
+      "utils"
+    ],
+    "selected_route": null,
+    "selected_rating": "?",
+    "score_ratio": null,
+    "priority": "P0",
+    "admission_url": "https://admission.pku.edu.cn/",
+    "cms_type": "static",
+    "notes": "",
+    "samples": [
+      {
+        "route": "bbs",
+        "url": "https://rsshub-uni-admission.vercel.app/pku/bbs",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "cls",
+        "url": "https://rsshub-uni-admission.vercel.app/pku/cls",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "eecs",
+        "url": "https://rsshub-uni-admission.vercel.app/pku/eecs",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "hr",
+        "url": "https://rsshub-uni-admission.vercel.app/pku/hr",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "nsd",
+        "url": "https://rsshub-uni-admission.vercel.app/pku/nsd",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "清华大学",
+    "namespace": "tsinghua",
+    "rsshub_status": "partial_503",
+    "routes_available": [
+      "lib",
+      "news"
+    ],
+    "selected_route": "news",
+    "selected_rating": "B",
+    "score_ratio": 0.1,
+    "priority": "P1",
+    "admission_url": "https://join-tsinghua.edu.cn/",
+    "cms_type": "static",
+    "notes": "",
+    "samples": [
+      {
+        "route": "news",
+        "url": "https://rsshub-uni-admission.vercel.app/tsinghua/news",
+        "status": "ok",
+        "rating": "B",
+        "score_ratio": 0.1,
+        "numerator": 1,
+        "denominator": 10,
+        "titles": [
+          "能动系李水清团队牵头项目新型绿色离子液体空间推进技术首期在轨实验圆满完成",
+          "校领导率团访问新竹清华大学 开展体育交流",
+          "唯真讲坛邀请朱安东作“学习习近平经济思想的几点体会”报告",
+          "清华大学-新加坡国立大学下一代搜索技术联合研究中心第十二次学术研讨会举行",
+          "清华大学教授陈德亮当选为“未来地球”国际大科学计划联合主席",
+          "【见微知绩】平安清华面对面：“双向挂职”干部走进保卫部开展校园安全联学交流",
+          "化工系刘振东课题组在低维分子筛功能化与催化应用研究方面取得新进展",
+          "美术学院联合承办“汉字智慧：中国汉字文化设计传播展”",
+          "联合国开发计划署可持续发展青年创新创业示范项目暨联合国开发计划署-清华大学青年人才创新实验室启动",
+          "环境学院王书肖团队建立以健康为导向的空气质量调控新方法"
+        ],
+        "error": null
+      },
+      {
+        "route": "lib",
+        "url": "https://rsshub-uni-admission.vercel.app/tsinghua/lib",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "中国人民大学",
+    "namespace": "ruc",
+    "rsshub_status": "ok",
+    "routes_available": [
+      "ai",
+      "hr"
+    ],
+    "selected_route": "ai",
+    "selected_rating": "C",
+    "score_ratio": 0.0,
+    "priority": "P0",
+    "admission_url": "https://rdzs.ruc.edu.cn/",
+    "cms_type": "static",
+    "notes": "",
+    "samples": [
+      {
+        "route": "ai",
+        "url": "https://rsshub-uni-admission.vercel.app/ruc/ai",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 10,
+        "titles": [
+          "中国人民大学高瓴人工智能学院2026年数据计算及应用（智能科学）强基计划专业介绍",
+          "中国人民大学2026年高瓴人工智能学院硕士复试成绩",
+          "中国人民大学2026高瓴人工智能学院“申请-考核”制博士综合考核成绩",
+          "中国人民大学高瓴人工智能学院2026年硕士研究生招生考试复试录取工作方案",
+          "2026年高瓴人工智能学院硕士研究生招生考试复试分数线及复试名单公示",
+          "中国人民大学高瓴人工智能学院2026年博士研究生“申请—考核”制综合考核工作办法",
+          "2026年高瓴人工智能学院“申请—考核”制博士研究生人工智能专业（北京智源人工智能研究院联合培养）综合考核名单",
+          "2026年硕士生初试成绩复核结果公示",
+          "高瓴人工智能学院关于2026年硕士研究生招生考试初试成绩复核工作的通知",
+          "2026年高瓴人工智能学院“申请—考核”制博士研究生电子信息专业综合考核名单公示"
+        ],
+        "error": null
+      },
+      {
+        "route": "hr",
+        "url": "https://rsshub-uni-admission.vercel.app/ruc/hr",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 6,
+        "titles": [
+          "机构设置",
+          "通知公告",
+          "工作动态",
+          "下载专区",
+          "规章制度",
+          "人才招聘"
+        ],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "北京航空航天大学",
+    "namespace": "buaa",
+    "rsshub_status": "unavailable",
+    "routes_available": [
+      "jiaowu",
+      "lib",
+      "news",
+      "sme"
+    ],
+    "selected_route": null,
+    "selected_rating": "?",
+    "score_ratio": null,
+    "priority": "P0",
+    "admission_url": "https://zs.buaa.edu.cn/",
+    "cms_type": "static",
+    "notes": "",
+    "samples": [
+      {
+        "route": "news",
+        "url": "https://rsshub-uni-admission.vercel.app/buaa/news",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "jiaowu",
+        "url": "https://rsshub-uni-admission.vercel.app/buaa/jiaowu",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "lib",
+        "url": "https://rsshub-uni-admission.vercel.app/buaa/lib",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "sme",
+        "url": "https://rsshub-uni-admission.vercel.app/buaa/sme",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "北京理工大学",
+    "namespace": "bit",
+    "rsshub_status": "partial_503",
+    "routes_available": [
+      "cs",
+      "jwc",
+      "rszhaopin",
+      "yjs"
+    ],
+    "selected_route": "rszhaopin",
+    "selected_rating": "C",
+    "score_ratio": 0.0,
+    "priority": "P0",
+    "admission_url": "https://admission.bit.edu.cn/",
+    "cms_type": "static",
+    "notes": "",
+    "samples": [
+      {
+        "route": "jwc",
+        "url": "https://rsshub-uni-admission.vercel.app/bit/jwc",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "cs",
+        "url": "https://rsshub-uni-admission.vercel.app/bit/cs",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "rszhaopin",
+        "url": "https://rsshub-uni-admission.vercel.app/bit/rszhaopin",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 3,
+        "titles": [
+          "聚英才 建高地 I 北京理工大学“特立青年学者”全球招聘开启",
+          "博士后 待遇厚 I 北京理工大学博士后招聘公告",
+          "聚天下英贤 建一流大学｜北京理工大学诚邀全球优秀人才加盟"
+        ],
+        "error": null
+      },
+      {
+        "route": "yjs",
+        "url": "https://rsshub-uni-admission.vercel.app/bit/yjs",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "中国农业大学",
+    "namespace": "cau",
+    "rsshub_status": "ok",
+    "routes_available": [
+      "ele",
+      "yjs"
+    ],
+    "selected_route": "ele",
+    "selected_rating": "C",
+    "score_ratio": 0.0,
+    "priority": "P0",
+    "admission_url": "https://jwzs.cau.edu.cn/",
+    "cms_type": "static",
+    "notes": "",
+    "samples": [
+      {
+        "route": "ele",
+        "url": "https://rsshub-uni-admission.vercel.app/cau/ele",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 10,
+        "titles": [
+          "【国际合作】信电学院余强老师因公出访信息公示[2024-19]",
+          "【国际合作】信电学院张杰老师因公出访信息公示[2024-02]",
+          "【因公出访总结报告】李道亮教授出访萨里大学和慕尼黑工业大学总结报告",
+          "信电学院2023年度URP&北创项目中期检查答辩结果公示",
+          "【国际合作】信电学院安冬、位耀光老师因公出访信息公示[2023-30]",
+          "信电学院2023年度北创&URP中期检查分组及材料提交通知(更新)",
+          "关于研究生导师参加“四有导师学院”学习的通知",
+          "【报奖公示】中国农业大学参与仲恺农业工程学院申报2023年度广东省科学技术奖提名项目公示",
+          "【报奖公示】中国农业大学参与广东海洋大学申报2023年度广东省科学技术奖提名项目公示",
+          "【研究生】信电学院关于进行2023年秋学期研究生培养环节考核工作的通知"
+        ],
+        "error": null
+      },
+      {
+        "route": "yjs",
+        "url": "https://rsshub-uni-admission.vercel.app/cau/yjs",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 10,
+        "titles": [
+          "• 中国农业大学关于组织第二批2026年博士研究生报名的通知",
+          "• 关于公布2026年面向港澳台地区研究生招生考试复试分数线及复试录取安...",
+          "• 中国农业大学2026年港澳台研考初试统考成绩查询及复核办法",
+          "• 中国农业大学2026年博士研究生招生申请考核制复核录取工作办法",
+          "• 中国农业大学2026年博士生国家专项初审通过名单",
+          "• 关于组织2026年硕士研究生招生考试复试工作人员培训的通知",
+          "• 中国农业大学2026年硕士研究生招生复试录取工作办法",
+          "• 中国农业大学2026年硕士研究生招生考试复试基本分数线",
+          "• 关于对2025年9月转入博士阶段学习的硕博连读研究生进行资格复核的通...",
+          "• 中国农业大学2026年全国硕士研究生招生考试（初试）成绩查询及相关工..."
+        ],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "北京师范大学",
+    "namespace": "bnu",
+    "rsshub_status": "partial_503",
+    "routes_available": [
+      "bs",
+      "dwxgb",
+      "fdy",
+      "fe",
+      "jwb",
+      "lib",
+      "mba"
+    ],
+    "selected_route": "bs",
+    "selected_rating": "B",
+    "score_ratio": 0.3,
+    "priority": "P1",
+    "admission_url": "https://admission.bnu.edu.cn/",
+    "cms_type": "static",
+    "notes": "",
+    "samples": [
+      {
+        "route": "bs",
+        "url": "https://rsshub-uni-admission.vercel.app/bnu/bs",
+        "status": "ok",
+        "rating": "B",
+        "score_ratio": 0.3,
+        "numerator": 3,
+        "denominator": 10,
+        "titles": [
+          "学院召开青年教师发展交流会暨学校第二十届青教赛启动培训会",
+          "经管学院举办“树立和践行正确政绩观”主题党课",
+          "北京师范大学江西招生组扎实开展招生宣传与科普讲座活动",
+          "儿童财经素养与社会品格发展论坛暨校友家庭日成功举办",
+          "我院魏浩教授在《经济研究》发表学术论文",
+          "第七届劳动经济学前沿论坛成功举办",
+          "首届“创新生态与平台”学术年会成功举办",
+          "《大模型浪潮：智能体进展及应用趋势》讲座顺利举行",
+          "《荷兰：物理学、技术与工匠精神》讲座顺利举行",
+          "中国会计学会会计教育分会2026年学术年会成功举办"
+        ],
+        "error": null
+      },
+      {
+        "route": "dwxgb",
+        "url": "https://rsshub-uni-admission.vercel.app/bnu/dwxgb",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "fdy",
+        "url": "https://rsshub-uni-admission.vercel.app/bnu/fdy",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 10,
+        "titles": [
+          "【培训研修】关于组织开展北京师范大学“辅导员履职能力提升”系列培训第二场报告的通知",
+          "【培训研修】关于组织开展北京师范大学辅导员校务校情通报会的通知",
+          "【队伍建设】关于2026年思想政治教育系列专业技术岗位晋升工作的通知",
+          "【培训研修】关于组织开展北京师范大学“辅导员履职能力提升”系列培训首场报告的通知",
+          "【队伍建设】北京师范大学2026年专职辅导员（双肩挑辅导员）招聘启事",
+          "【队伍建设】北京师范大学2026年专职辅导员（全职辅导员）招聘启事",
+          "【队伍建设】关于做好2026年思想政治教育系列岗位晋升准备工作的通知",
+          "【培训研修】学校举办2025年北京高校辅导员骨干培训班",
+          "【队伍建设】关于开展2025年度院（系）辅导员考核工作的通知",
+          "【队伍建设】关于开展北京师范大学2025年“比亚迪奖教金”评选工作的通知"
+        ],
+        "error": null
+      },
+      {
+        "route": "fe",
+        "url": "https://rsshub-uni-admission.vercel.app/bnu/fe",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "jwb",
+        "url": "https://rsshub-uni-admission.vercel.app/bnu/jwb",
+        "status": "ok",
+        "rating": "B",
+        "score_ratio": 0.2,
+        "numerator": 2,
+        "denominator": 10,
+        "titles": [
+          "【学业管理】 关于做好北京校区2025～2026学年第二学期期末考试相关工作的通知",
+          "【实践教学】 关于2026年度夏季学期京珠跨选工作的通知",
+          "【学业管理】 关于公示2026年本科生转专业拟接收学生名单的通知",
+          "【专业与课程】 北京师范大学本科专业设置一览表（2026）",
+          "【教师教育】 关于开展2027届教育类研究生和师范类专业学生教育教学能力考核工作的通知",
+          "【学业管理】 关于开展2026年度本科生体质健康测试的通知",
+          "【学业管理】 关于公布2025-2026学年第一学期本科和研究生课程优秀研究生助教评选结果的通知",
+          "【学位授予】 关于2026年9月和2026年12月批次研究生学位申请、审核时间安排的通知",
+          "【培养过程】 关于2026年北京校区拟毕（结）业本科生图像采集工作的补充通知",
+          "【学业管理】 关于开展2025～2026学年第二学期申报及授予学士学位(成人高等教育)工作的通知"
+        ],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "天津大学",
+    "namespace": "tju",
+    "rsshub_status": "partial_503",
+    "routes_available": [
+      "cic",
+      "news",
+      "oaa",
+      "yzb"
+    ],
+    "selected_route": "news",
+    "selected_rating": "C",
+    "score_ratio": 0.0,
+    "priority": "P0",
+    "admission_url": "https://zs.tju.edu.cn/",
+    "cms_type": "static",
+    "notes": "",
+    "samples": [
+      {
+        "route": "news",
+        "url": "https://rsshub-uni-admission.vercel.app/tju/news",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 1,
+        "titles": [
+          "提示信息"
+        ],
+        "error": null
+      },
+      {
+        "route": "yzb",
+        "url": "https://rsshub-uni-admission.vercel.app/tju/yzb",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 10,
+        "titles": [
+          "【专博考核】天津大学2026年专业学位博士综合考核工作安排",
+          "关于天津大学2026年部分硕士研究生复试退费安排的通知",
+          "2026级研究生新生入学报到通知",
+          "关于延长2026年专业学位博士报名系统开放时间的通知",
+          "关于2026年港澳台研究生招生考试初试统考成绩复核工作的通知",
+          "【学博考核】天津大学2026年学术型博士研究生招生多元考核工作安排（春季学期）",
+          "2026级研究生英语分班方案邮件的说明",
+          "各学院（部）联系方式（含邮箱）",
+          "天津大学2026年硕士研究生招生考试初试进入复试基本分数要求",
+          "【专项计划】天津大学与海南大学2026年联合培养博士研究生招生简章"
+        ],
+        "error": null
+      },
+      {
+        "route": "cic",
+        "url": "https://rsshub-uni-admission.vercel.app/tju/cic",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 10,
+        "titles": [
+          "天大 × 敦煌研究院，携手启新程！",
+          "文物本体表面监测与分析研究国家文物局重点科研基地（天津大学）2025年工作会议顺利举行",
+          "智能与计算学部举办“构建健康和谐的新型导学关系”导师培训会",
+          "天津大学视觉智能团队获全国“最佳实践”案例成就奖",
+          "学部获批1门首批天津市新工科项目式课程",
+          "天津大学软件安全团队成果被信息安全领域顶级会议NDSS 2026录用",
+          "第十三届CCF大数据学术会议在天津圆满举行",
+          "学部新增一门国家级一流本科课程",
+          "智能与计算学部“研究生学位申请流程”专题讲座成功举办",
+          "李文信教授入选第七届中国青年科技工作者协会会员"
+        ],
+        "error": null
+      },
+      {
+        "route": "oaa",
+        "url": "https://rsshub-uni-admission.vercel.app/tju/oaa",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "大连理工大学",
+    "namespace": "dut",
+    "rsshub_status": "unavailable",
+    "routes_available": [
+      "defaults",
+      "index",
+      "shortcuts"
+    ],
+    "selected_route": null,
+    "selected_rating": "?",
+    "score_ratio": null,
+    "priority": "P0",
+    "admission_url": "https://zs.dlut.edu.cn/",
+    "cms_type": "unknown",
+    "notes": "",
+    "samples": [
+      {
+        "route": "defaults",
+        "url": "https://rsshub-uni-admission.vercel.app/dut/defaults",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "index",
+        "url": "https://rsshub-uni-admission.vercel.app/dut/index",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "shortcuts",
+        "url": "https://rsshub-uni-admission.vercel.app/dut/shortcuts",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "吉林大学",
+    "namespace": "jlu",
+    "rsshub_status": "partial_503",
+    "routes_available": [
+      "ccst",
+      "jwc",
+      "phy"
+    ],
+    "selected_route": "jwc",
+    "selected_rating": "B",
+    "score_ratio": 0.5,
+    "priority": "P1",
+    "admission_url": "https://zsb.jlu.edu.cn/",
+    "cms_type": "static",
+    "notes": "",
+    "samples": [
+      {
+        "route": "jwc",
+        "url": "https://rsshub-uni-admission.vercel.app/jlu/jwc",
+        "status": "ok",
+        "rating": "B",
+        "score_ratio": 0.5,
+        "numerator": 2,
+        "denominator": 4,
+        "titles": [
+          "关于2025-2026学年第二学期部分校公选课停开的通知",
+          "关于2025-2026学年第一学期部分校公选课停开的通知",
+          "关于开展2025级“基础学科拔尖学生培养计划2.0”理科试验班（唐敖庆班）学生选拔考试面试工作的通知",
+          "关于开展2025级“基础学科拔尖学生培养计划2.0” 理科试验班（唐敖庆班）学生选拔笔试的通知"
+        ],
+        "error": null
+      },
+      {
+        "route": "ccst",
+        "url": "https://rsshub-uni-admission.vercel.app/jlu/ccst",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "phy",
+        "url": "https://rsshub-uni-admission.vercel.app/jlu/phy",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "哈尔滨工业大学",
+    "namespace": "hit",
+    "rsshub_status": "partial_503",
+    "routes_available": [
+      "hitgs",
+      "templates",
+      "today"
+    ],
+    "selected_route": "hitgs",
+    "selected_rating": "C",
+    "score_ratio": 0.0,
+    "priority": "P0",
+    "admission_url": null,
+    "cms_type": "unknown",
+    "notes": "bkzs_url_not_found",
+    "samples": [
+      {
+        "route": "hitgs",
+        "url": "https://rsshub-uni-admission.vercel.app/hit/hitgs",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 10,
+        "titles": [
+          "关于 2026 年春季学期末硕士学位申请审核工作的通知",
+          "哈尔滨工业大学研究生教学改革项目 研究生“点子”专题项目立项名单",
+          "2026年春季学期第一批研究生课堂教学准入结果的通知",
+          "关于开展“十五五”研究生教育国际交流能力跃升行动的通知",
+          "",
+          "关于2026年春季学期研究生公共课考试的通知",
+          "关于做好2026年春季学期研究生课程考试有关工作的通知",
+          "2026年度“与国际高水平学者共建研究生课程”评审结果公示",
+          "哈尔滨工业大学第八届研究生教学督导专家评聘通知",
+          "2026年度研究生科创能力提升项目立项结果公示"
+        ],
+        "error": null
+      },
+      {
+        "route": "templates",
+        "url": "https://rsshub-uni-admission.vercel.app/hit/templates",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "today",
+        "url": "https://rsshub-uni-admission.vercel.app/hit/today",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "同济大学",
+    "namespace": "tongji",
+    "rsshub_status": "ok",
+    "routes_available": [
+      "bks",
+      "gs",
+      "sem",
+      "sse",
+      "yjs"
+    ],
+    "selected_route": "bks",
+    "selected_rating": "B",
+    "score_ratio": 0.375,
+    "priority": "P1",
+    "admission_url": "https://bkzs.tongji.edu.cn/",
+    "cms_type": "nuxt-spa",
+    "notes": "",
+    "samples": [
+      {
+        "route": "gs",
+        "url": "https://rsshub-uni-admission.vercel.app/tongji/gs",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 10,
+        "titles": [
+          "关于做好我校2026年学位授予审核工作的通知",
+          "关于公布同济大学各一级学科博士硕士学位授予标准的通知",
+          "【招募通知】“气候变化与全球治理”国际大学生极地暑期学校",
+          "关于开展2026年国家公派研究生项目实施工作的通知",
+          "2026年中法联合培养博士项目课题汇总",
+          "重要通知：2026年博士硕士学位授予审核批次公布",
+          "2026年国家公派研究生项目宣传月系列活动开启！",
+          "关于申报2026年同济大学优秀博士研究生出国访学项目（中长期）通知",
+          "关于2026年同济大学公派研究生项目启动的通知",
+          "研究生自助服务指南"
+        ],
+        "error": null
+      },
+      {
+        "route": "bks",
+        "url": "https://rsshub-uni-admission.vercel.app/tongji/bks",
+        "status": "ok",
+        "rating": "B",
+        "score_ratio": 0.375,
+        "numerator": 3,
+        "denominator": 8,
+        "titles": [
+          "【活动招募通知】 “气候变化与全球治理”国际大学生极地暑期学校 ——第三季：冰岛寻真，探微北极",
+          "同济大学2026年上半年全国大学英语四、六级考试报名通知",
+          "关于2026年本科生普通话水平测试安排及准考证下载通知",
+          "2026春季《国际化拔尖创新人才培养计划》课程选课通知",
+          "2025-2026学年第二学期结业生选课通知",
+          "2025-2026学年第二学期本科生重修选课通知",
+          "2025-2026学年第二学期进阶式培养专业课程缴费及重修选课通知",
+          "关于2026届本科毕业设计(论文)第二学期开学工作及时间节点的通知"
+        ],
+        "error": null
+      },
+      {
+        "route": "sem",
+        "url": "https://rsshub-uni-admission.vercel.app/tongji/sem",
+        "status": "ok",
+        "rating": "B",
+        "score_ratio": 0.1,
+        "numerator": 1,
+        "denominator": 10,
+        "titles": [
+          "教职工因公出国（境）线上审批流程【2026年3月】",
+          "关于国家留学基金委2025-2026学年国外教育调研访问学者项目遴选通知",
+          "关于公布经济与管理学院2026年国家公派研究生项目拟推荐人员名单的通知",
+          "2026年度同济大学校级短期外国专家项目申报通知",
+          "关于开展2025年经济与管理学院教职工年度考核工作的通知",
+          "1204公共管理学学科硕士学位授予标准",
+          "1202工商管理学科博士硕士学位授予标准",
+          "0202应用经济学学科博士硕士学位授予标准",
+          "1201 管理科学与工程学科博士硕士学位授予标准",
+          "关于开展2026年同济大学举办国际会议预报工作的通知"
+        ],
+        "error": null
+      },
+      {
+        "route": "sse",
+        "url": "https://rsshub-uni-admission.vercel.app/tongji/sse",
+        "status": "ok",
+        "rating": "B",
+        "score_ratio": 0.2,
+        "numerator": 2,
+        "denominator": 10,
+        "titles": [
+          "2023-2024学年同济大学计算机科学与技术学院第一批次奖学金评审结果公示",
+          "关于开展同济大学第六届“筑梦·砺行·成长” 学生资助宣传大使评选活动的通知",
+          "关于开展2023年春季学期学生国际及港澳台交流奖学金评选工作的通知",
+          "关于组织开展2023年同济大学“扬帆奖” 评选与表彰工作的通知",
+          "关于开展2023年研究生、研究生导师体验问卷调查的通知",
+          "同济大学软件学院第八届国际青年学者论坛诚邀海内外英才",
+          "第十六届全国大学生软件创新大赛参赛通知",
+          "软件学院关于暑假（8月1日-8月5日）办理2022届毕业生落户手续的通知",
+          "关于开展2022年暑假“同心筑梦，济世中华”学生资助政策宣传项目的通知",
+          "关于开展2022年人才培养质量问卷调查的通知（本科生）"
+        ],
+        "error": null
+      },
+      {
+        "route": "yjs",
+        "url": "https://rsshub-uni-admission.vercel.app/tongji/yjs",
+        "status": "ok",
+        "rating": "B",
+        "score_ratio": 0.2,
+        "numerator": 2,
+        "denominator": 10,
+        "titles": [
+          "同济大学2026年秋季研究生户口转接注意事项",
+          "同济大学中意工程创新学院2027年硕士研究生招生通知",
+          "关于同济大学研究生招生问答智能体（研招助手）上线的通知",
+          "同济大学与福建福耀科技大学2026年联合培养硕士研究生招生通知",
+          "同济大学-上海期智研究院“期智未来学者” 联合培养专项博士研究生招生",
+          "同济大学国家卓越工程师学院2026年全日制工程博士专项推免招生通知",
+          "同济大学-北京中关村学院、上海创智学院、深圳河套学院招生专项通知",
+          "“期智未来学者计划”招生通知",
+          "同济大学2025年优秀大学生暑期学校优秀营员名单公示（第五批）",
+          "各学院2026年接收推荐免试研究生（含直接攻博）章程暨复试办法（更新中）"
+        ],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "上海交通大学",
+    "namespace": "sjtu",
+    "rsshub_status": "partial_503",
+    "routes_available": [
+      "gs",
+      "jwc",
+      "seiee",
+      "tongqu",
+      "yzb"
+    ],
+    "selected_route": "jwc",
+    "selected_rating": "B",
+    "score_ratio": 0.5,
+    "priority": "P1",
+    "admission_url": "https://admissions.sjtu.edu.cn/",
+    "cms_type": "nuxt-spa",
+    "notes": "",
+    "samples": [
+      {
+        "route": "jwc",
+        "url": "https://rsshub-uni-admission.vercel.app/sjtu/jwc",
+        "status": "ok",
+        "rating": "B",
+        "score_ratio": 0.5,
+        "numerator": 5,
+        "denominator": 10,
+        "titles": [
+          "关于开展2026年暑期本科生科研见习活动的通知",
+          "2026年北京大学C9暑期学校录取名单公示",
+          "关于开展2026年学生人工智能综合能力提升培训工作的通知",
+          "关于2026届毕业生登录教学信息服务网进行学籍自查的通知",
+          "关于举办西安交通大学2026年第十七届 “中国传统文化”C9暑期学校的通知",
+          "2026年复旦大学C9暑期学校录取名单公示",
+          "哈尔滨工业大学2026年国际暑期学校报名通知",
+          "上海交通大学关于组织申报2026年度教育部大中小学课程教材研究项目的通知",
+          "关于上海交通大学第49期PRP项目中期检查的通知",
+          "招募通知 | 2026年上海交通大学-华为技术有限公司“HarmonyOS菁英班”"
+        ],
+        "error": null
+      },
+      {
+        "route": "yzb",
+        "url": "https://rsshub-uni-admission.vercel.app/sjtu/yzb",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "gs",
+        "url": "https://rsshub-uni-admission.vercel.app/sjtu/gs",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "seiee",
+        "url": "https://rsshub-uni-admission.vercel.app/sjtu/seiee",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "tongqu",
+        "url": "https://rsshub-uni-admission.vercel.app/sjtu/tongqu",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "华东师范大学",
+    "namespace": "ecnu",
+    "rsshub_status": "partial_503",
+    "routes_available": [
+      "art",
+      "bksy",
+      "cee",
+      "chem",
+      "chinese",
+      "comm",
+      "cs",
+      "cxcy",
+      "dase",
+      "dx",
+      "dxb",
+      "ed",
+      "geoai",
+      "ghcollege",
+      "history",
+      "jiaoliu",
+      "jwc",
+      "mks",
+      "mxcsy",
+      "pharm",
+      "philo",
+      "phy",
+      "psy",
+      "sees",
+      "sei",
+      "spm",
+      "stat",
+      "tyxx",
+      "yjs"
+    ],
+    "selected_route": "bksy",
+    "selected_rating": "B",
+    "score_ratio": 0.2,
+    "priority": "P1",
+    "admission_url": "https://zsb.ecnu.edu.cn/",
+    "cms_type": "webplus",
+    "notes": "",
+    "samples": [
+      {
+        "route": "jwc",
+        "url": "https://rsshub-uni-admission.vercel.app/ecnu/jwc",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "art",
+        "url": "https://rsshub-uni-admission.vercel.app/ecnu/art",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 10,
+        "titles": [
+          "华东师范大学美术学院2026年硕士研究生招生 复试录取实施细则",
+          "征稿 | 华东师范大学第六届“华美研究生论坛”",
+          "美术学院2026年博士研究生招生工作办法",
+          "用人单位邀约丨华东师范大学音体美2025年春季联合校园招聘会公告",
+          "2025年华东师范大学华美研究生论坛征稿启事",
+          "美术学院2025年博士研究生招生申请考核工作办法",
+          "用人单位邀请函丨华东师范大学音体美毕业生秋季专场招聘会",
+          "华东师范大学美术学院推荐优秀应届本科毕业生免试攻读2025年研究生工作评审细则",
+          "喜报丨美术学院在“光荣之城”第十届上海市民艺术大展中获得佳绩",
+          "华东师范大学美术学院 2024 年港澳台地区研究生招生考试复试方案"
+        ],
+        "error": null
+      },
+      {
+        "route": "bksy",
+        "url": "https://rsshub-uni-admission.vercel.app/ecnu/bksy",
+        "status": "ok",
+        "rating": "B",
+        "score_ratio": 0.2,
+        "numerator": 2,
+        "denominator": 10,
+        "titles": [
+          "2026年暑期学期本科生课程选课通知",
+          "2026年春季学期本科生期中退课及不计绩点申请工作通知",
+          "关于开展2026届本科毕业生问卷调查——评选你心目中最优秀教师的通知",
+          "关于开展2025-2026学年第二学期学生期中评教的通知",
+          "关于2026年春季学期本科生成绩及学分认定的通知",
+          "关于组织我校同学参加2026年全国大学生英语竞赛的通知",
+          "2025-2026学年春季学期第三轮选课通知",
+          "2025-2026学年第二学期 优秀本科生提前修读研究生课程选课通知",
+          "关于2026届本科毕业生学历证书照片采集工作的通知",
+          "关于2026年华东师范大学本科生转专业工作的通知"
+        ],
+        "error": null
+      },
+      {
+        "route": "cee",
+        "url": "https://rsshub-uni-admission.vercel.app/ecnu/cee",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "chem",
+        "url": "https://rsshub-uni-admission.vercel.app/ecnu/chem",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 10,
+        "titles": [
+          "化学与分子工程学院 2025-2026 学年第二学期博士研究生科研成果审核公示",
+          "华东师范大学化学与分子工程学院2026年博士研究生招生工作细则-春季批次",
+          "关于推荐 2026 年华东师范大学本科教学优秀奖候选人公示",
+          "华东师范大学化学与分子工程学院2026年全国统考硕士研究生复试补录结果",
+          "华东师范大学化学与分子工程学院2026年全国统考硕士研究生复试合格结果公布",
+          "华东师范大学化学与分子工程学院 2026 年硕士研究生招生复试录取实施细则",
+          "华东师范大学化学与分子工程学院2026年博士研究生招生（含硕博连读和普通申请-考核方式）工作细则",
+          "化学与分子工程学院2025年能达奖教金申报推荐人选公示",
+          "2026年华东师范大学化学与分子工程学院推免复试排名公示",
+          "华东师范大化学与分子工程学院2026年招收优秀应届本科毕业生免试攻读研究生（含直接攻博）实施细则"
+        ],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "南京大学",
+    "namespace": "nju",
+    "rsshub_status": "partial_503",
+    "routes_available": [
+      "admission",
+      "dafls",
+      "exchangesys",
+      "gra",
+      "hosptial",
+      "hqjt",
+      "itsc",
+      "jjc",
+      "jw",
+      "rczp",
+      "scit",
+      "zbb",
+      "zcc"
+    ],
+    "selected_route": "admission",
+    "selected_rating": "B",
+    "score_ratio": 0.25,
+    "priority": "P1",
+    "admission_url": "https://bkzs.nju.edu.cn/",
+    "cms_type": "unknown",
+    "notes": "",
+    "samples": [
+      {
+        "route": "admission",
+        "url": "https://rsshub-uni-admission.vercel.app/nju/admission",
+        "status": "ok",
+        "rating": "B",
+        "score_ratio": 0.25,
+        "numerator": 1,
+        "denominator": 4,
+        "titles": [
+          "【2025级新生】教务安排汇总",
+          "2025级本科新生学籍电子照片采集通知",
+          "南京大学学生资助政策简介",
+          "关于开展2025年南京大学新生先修营报名工作的通知"
+        ],
+        "error": null
+      },
+      {
+        "route": "dafls",
+        "url": "https://rsshub-uni-admission.vercel.app/nju/dafls",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 5,
+        "titles": [
+          "大学外语部2026年教学岗副教授招聘材料及结果公示",
+          "2026年五一值班信息",
+          "2025年度教学岗高级职称评审结果公示、申报材料实物公示",
+          "2026年全国大学生英语竞赛南京大学分赛成绩公告",
+          "2026年清明节放假安全提醒及值班安排"
+        ],
+        "error": null
+      },
+      {
+        "route": "exchangesys",
+        "url": "https://rsshub-uni-admission.vercel.app/nju/exchangesys",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "gra",
+        "url": "https://rsshub-uni-admission.vercel.app/nju/gra",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 10,
+        "titles": [
+          "中国国际大学生创新大赛（2026）南京大学校赛通知",
+          "关于召开2026年南京大学研究生教学成果培育专题辅导报告会的通知",
+          "关于2026年度南京大学研究生校外指导教师拟聘任名单的公示",
+          "关于组织 2026 年度毕业研究生上网核对毕业信息的通知",
+          "毕业研究生注意事项（2026 年第二季）",
+          "关于南京大学2026年国家公派博士后项目推荐人选的公示",
+          "关于举办2026年博士生海外访学项目宣讲会的通知",
+          "关于开展2026年南京大学博士生海外访学项目的通知",
+          "关于开展2026年6月学位申请与审核工作的通知",
+          "关于做好南京大学2027届毕业研究生图像信息采集工作的通知"
+        ],
+        "error": null
+      },
+      {
+        "route": "hosptial",
+        "url": "https://rsshub-uni-admission.vercel.app/nju/hosptial",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "东南大学",
+    "namespace": "seu",
+    "rsshub_status": "partial_503",
+    "routes_available": [
+      "cse",
+      "cyber",
+      "radio",
+      "yjs",
+      "yzb"
+    ],
+    "selected_route": "yjs",
+    "selected_rating": "C",
+    "score_ratio": 0.0,
+    "priority": "P0",
+    "admission_url": "https://zsb.seu.edu.cn/",
+    "cms_type": "webplus",
+    "notes": "",
+    "samples": [
+      {
+        "route": "yzb",
+        "url": "https://rsshub-uni-admission.vercel.app/seu/yzb",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "cse",
+        "url": "https://rsshub-uni-admission.vercel.app/seu/cse",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "cyber",
+        "url": "https://rsshub-uni-admission.vercel.app/seu/cyber",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "radio",
+        "url": "https://rsshub-uni-admission.vercel.app/seu/radio",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "yjs",
+        "url": "https://rsshub-uni-admission.vercel.app/seu/yjs",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 10,
+        "titles": [
+          "关于2026-2027学年东南大学研究生课程目录修订的通知",
+          "关于组织研究生参加 2026 年中国研究生创新实践系列大赛的通知",
+          "关于做好2024级（春季）博士生中期考核工作的通知",
+          "关于开展2024级硕士研究生中期考核工作的通知",
+          "关于2026年第二批东南大学专业学位研究生校外指导教师资格申报的通知",
+          "东南大学第六届江苏省翻译配音公益大赛初赛通知",
+          "关于举办东南大学第十六届英语演讲竞赛的通知",
+          "关于开展2026年研究生教材立项建设工作的通知",
+          "关于开展东南大学2026年AI赋能研究生教育相关校级项目申报工作的通知",
+          "2026年全国大学生英语竞赛初赛暨2026年东南大学大学生英语竞赛须知"
+        ],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "浙江大学",
+    "namespace": "zju",
+    "rsshub_status": "partial_503",
+    "routes_available": [
+      "career",
+      "cse",
+      "cst",
+      "grs",
+      "list",
+      "physics",
+      "sis"
+    ],
+    "selected_route": "cse",
+    "selected_rating": "B",
+    "score_ratio": 0.1,
+    "priority": "P1",
+    "admission_url": "https://zdzsc.zju.edu.cn/",
+    "cms_type": "webplus",
+    "notes": "",
+    "samples": [
+      {
+        "route": "career",
+        "url": "https://rsshub-uni-admission.vercel.app/zju/career",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "cse",
+        "url": "https://rsshub-uni-admission.vercel.app/zju/cse",
+        "status": "ok",
+        "rating": "B",
+        "score_ratio": 0.1,
+        "numerator": 1,
+        "denominator": 10,
+        "titles": [
+          "凝心聚力踏新程，初心如磐跟党走 | 控制学院、生仪学院入党积极分子培训暨“在鲜红的党旗下”主题报告会顺利举行",
+          "晴日踏春 采摘拾趣 | 控制学院 2026 年教职工春游活动顺利举行",
+          "共话具身智能，共探育人新路 | 第十一期玉泉论坛成功举办",
+          "赏运河春光 传红色初心——浙大控制学院开展退休教职工“走、看、促”暨党支部主题活动",
+          "控制学院加强学生集体关怀工作推进会暨研究生德育导师工作会议顺利召开",
+          "控制学院“成长有约”2026年异地研究生师生交流专场顺利举办",
+          "筑牢思想根基，提升履职本领——控制学院“制”气凌云学生党建骨干培训会顺利举行",
+          "浙大控制学院邓瑞龙获2025年度中国自动化学会青年科技奖",
+          "喜报 | 校地融合标杆！我院深度参与建设环浙大玉泉人工智能创新谷获省级改革优秀奖！",
+          "浙江大学“控·致未来”青年论坛暨孙优贤奖学金公开答辩会顺利举办"
+        ],
+        "error": null
+      },
+      {
+        "route": "cst",
+        "url": "https://rsshub-uni-admission.vercel.app/zju/cst",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "grs",
+        "url": "https://rsshub-uni-admission.vercel.app/zju/grs",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "list",
+        "url": "https://rsshub-uni-admission.vercel.app/zju/list",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "中国科学技术大学",
+    "namespace": "ustc",
+    "rsshub_status": "partial_503",
+    "routes_available": [
+      "eeis",
+      "gs",
+      "index",
+      "job",
+      "jwc",
+      "math",
+      "scms",
+      "sist"
+    ],
+    "selected_route": "gs",
+    "selected_rating": "C",
+    "score_ratio": 0.0,
+    "priority": "P0",
+    "admission_url": "https://zsb.ustc.edu.cn/",
+    "cms_type": "webplus",
+    "notes": "",
+    "samples": [
+      {
+        "route": "jwc",
+        "url": "https://rsshub-uni-admission.vercel.app/ustc/jwc",
+        "status": "failed",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": "The read operation timed out"
+      },
+      {
+        "route": "gs",
+        "url": "https://rsshub-uni-admission.vercel.app/ustc/gs",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 10,
+        "titles": [
+          "关于举办中国科学技术大学第七届工程类研究生学术论坛暨“德创·精尖创新”博士生学术论坛的通知（第一轮）",
+          "2026年中国科学技术大学新任博士生导师名单公示（春季批次）",
+          "2026年夏季研究生毕(结)业日程",
+          "关于做好2026年度中国科学技术大学“中国科学院优秀博士学位论文”初选校内推荐工作的通知",
+          "关于做好2025-2026学年第二学期研究生学期注册工作的通知",
+          "中国科大2026年博士学位研究生招生网上报名通告",
+          "2025-2026学年第二学期研究生课程助教申报通知",
+          "关于2026年“优秀博士生出国留学支持计划”评审结果的公示",
+          "Instructions on Postgraduate Course Selection for 2026 Spring Semester",
+          "2026年春季学期研究生网上选课须知"
+        ],
+        "error": null
+      },
+      {
+        "route": "eeis",
+        "url": "https://rsshub-uni-admission.vercel.app/ustc/eeis",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "index",
+        "url": "https://rsshub-uni-admission.vercel.app/ustc/index",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "job",
+        "url": "https://rsshub-uni-admission.vercel.app/ustc/job",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "厦门大学",
+    "namespace": "xmu",
+    "rsshub_status": "ok",
+    "routes_available": [
+      "kydt"
+    ],
+    "selected_route": "kydt",
+    "selected_rating": "C",
+    "score_ratio": 0.0,
+    "priority": "P0",
+    "admission_url": "https://zs.xmu.edu.cn/",
+    "cms_type": "static",
+    "notes": "",
+    "samples": [
+      {
+        "route": "kydt",
+        "url": "https://rsshub-uni-admission.vercel.app/xmu/kydt",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 10,
+        "titles": [
+          "经济学科吴吉林教授合作论文在Econometric Theory正式发表",
+          "钟齐先副教授两篇论文分别发表于JBES和JASA",
+          "王璐航副教授合作论文在Journal of Development Economics正式发表",
+          "吴吉林教授合作论文在Journal of Econometrics正式发表",
+          "博士生张心宇和刘婧媛教授等合作论文在JASA在线发表",
+          "青年教师柳楠合作论文在JoE发表",
+          "梁若冰教授合作论文在《经济研究》发表",
+          "厦大经济学科博士生张齐圣、王雅琳合作论文在《经济研究》发表",
+          "郑挺国教授合作论文在《经济研究》正式发表",
+          "青年教师王晨笛合作成果在《美国科学院院刊》（PNAS）刊发"
+        ],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "武汉大学",
+    "namespace": "whu",
+    "rsshub_status": "partial_503",
+    "routes_available": [
+      "cs",
+      "gs",
+      "hyxt",
+      "news",
+      "rsgis",
+      "swrh",
+      "templates",
+      "util"
+    ],
+    "selected_route": "news",
+    "selected_rating": "B",
+    "score_ratio": 0.1,
+    "priority": "P1",
+    "admission_url": "https://aoff.whu.edu.cn/",
+    "cms_type": "static",
+    "notes": "",
+    "samples": [
+      {
+        "route": "news",
+        "url": "https://rsshub-uni-admission.vercel.app/whu/news",
+        "status": "ok",
+        "rating": "B",
+        "score_ratio": 0.1,
+        "numerator": 1,
+        "denominator": 10,
+        "titles": [
+          "武汉大学举办真理领航·学习宣传贯彻习近平新时代中国特色社会主义思想研讨会暨第八届珞珈智库论坛",
+          "湖北省人大常委会党组书记马国强来校调研小龙虾壳绿色资源化与高值化利用工作",
+          "武汉大学举行党委理论学习中心组集体学习会",
+          "武汉大学举行“青春接力担使命”五四主题活动",
+          "王密、张文获评湖北五一劳动奖章",
+          "祝贺！徐嘉鸿被授予全国五一劳动奖章",
+          "武汉大学召开2026年度网络安全工作会议",
+          "2026中国翻译协会年会在武汉大学举行",
+          "武汉大学召开引才工作推进会",
+          "武汉大学首届燕宝奖学金颁奖仪式暨座谈会举行"
+        ],
+        "error": null
+      },
+      {
+        "route": "gs",
+        "url": "https://rsshub-uni-admission.vercel.app/whu/gs",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 10,
+        "titles": [
+          "倾听心声 精准施策——研究生院举办直博生午餐会共话高质量发展",
+          "学校第十届党委“治理能力建设”专项巡视第七巡视组进驻研究生院",
+          "学校召开研究生院干部宣布会议",
+          "西北工业大学研究生院赴武汉大学调研交流 共探研究生教育高质量发展路径",
+          "武汉大学召开2025-2026学年第二学期开学教学工作布置会",
+          "我校3项案例获批2025年度教育部主题案例立项",
+          "工程管理项目中心“数智赋能・向新而行”2026年第二期系列活动：六校学子偕行 探访产业标杆 解码数智创新",
+          "共绘产教融合联合培养新蓝图 ——武汉大学与南方电网公司召开协同育人工作推进会",
+          "工程管理项目中心“数智赋能・向新而行”2026年第一期系列活动： 清华大学张伟教授谈人因视角下的创新管理",
+          "我校完成2026年全国硕士研究生招生考试考点工作"
+        ],
+        "error": null
+      },
+      {
+        "route": "cs",
+        "url": "https://rsshub-uni-admission.vercel.app/whu/cs",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "hyxt",
+        "url": "https://rsshub-uni-admission.vercel.app/whu/hyxt",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "rsgis",
+        "url": "https://rsshub-uni-admission.vercel.app/whu/rsgis",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "华中科技大学",
+    "namespace": "hust",
+    "rsshub_status": "partial_503",
+    "routes_available": [
+      "aia",
+      "gs",
+      "mse",
+      "yjs"
+    ],
+    "selected_route": "mse",
+    "selected_rating": "B",
+    "score_ratio": 0.1,
+    "priority": "P1",
+    "admission_url": "https://zsb.hust.edu.cn/",
+    "cms_type": "static",
+    "notes": "",
+    "samples": [
+      {
+        "route": "gs",
+        "url": "https://rsshub-uni-admission.vercel.app/hust/gs",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 10,
+        "titles": [
+          "新闻搜索三人获评中国研究生导师发展共同体首届优秀研究生导师与导师团队分享学校微博单周单篇点击量排名新闻网各单位用稿投稿量排行榜（2026年4月）常用链接",
+          "华中科技大学首届研究生人工智能暑期培训班圆满收官",
+          "",
+          "新闻搜索【卓越工程师培养】学校首位工程硕士研究生以实践成果获得硕士学位分享学校微博单周单篇点击量排名新闻网各单位用稿投稿量排行榜（2026年4月）常用链接",
+          "新闻搜索华中科技大学“国优计划”2024级研究生实习动员会举行分享学校微博单周单篇点击量排名新闻网各单位用稿投稿量排行榜（2026年4月）常用链接",
+          "新闻搜索【卓越工程师培养】国家卓越工程师学院卓越工程师培养专家委员会聘任仪式及第一次全体会议举行分享学校微博单周单篇点击量排名新闻网各单位用稿投稿量排...",
+          "“DeepSeek赋能研究生教育管理”培训会成功举办",
+          "新闻搜索【卓越工程师培养】学校召开工程硕博士培养改革专项调研座谈会分享学校微博单周单篇点击量排名新闻网各单位用稿投稿量排行榜（2026年4月）常用链接",
+          "新闻搜索香港科技大学（广州）副校长吴景深教授来校交流分享学校微博单周单篇点击量排名新闻网各单位用稿投稿量排行榜（2026年4月）常用链接",
+          "新闻搜索研究生院建院40周年座谈会举行分享学校微博单周单篇点击量排名新闻网各单位用稿投稿量排行榜（2026年4月）常用链接"
+        ],
+        "error": null
+      },
+      {
+        "route": "aia",
+        "url": "https://rsshub-uni-admission.vercel.app/hust/aia",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "mse",
+        "url": "https://rsshub-uni-admission.vercel.app/hust/mse",
+        "status": "ok",
+        "rating": "B",
+        "score_ratio": 0.1,
+        "numerator": 1,
+        "denominator": 10,
+        "titles": [
+          "我院智能加工控制装备研究中心发表机器人加工动力学最新综述",
+          "【最美劳动者】李好：以智能设计赋能大国重器创新",
+          "我院2022级本科生熊元卿获2024-2025学年度国家奖学金并荣登《人民日报》",
+          "首战夺冠！HUST HRT学生团队问鼎RoboCup机器人世界杯中国赛",
+          "尹周平院士赴湖南邵阳开展科普报告",
+          "中国航空工业自控所与我院共商具身智能项目合作",
+          "机械学院举行本科2002级校友毕业20周年返校活动",
+          "机械学院在校五四表彰大会上荣获多项表彰",
+          "我院高亮教授团队荣获SWEVO期刊2025年度最佳论文奖",
+          "东莞武汉产学研专场对接签约活动在我院举行"
+        ],
+        "error": null
+      },
+      {
+        "route": "yjs",
+        "url": "https://rsshub-uni-admission.vercel.app/hust/yjs",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 10,
+        "titles": [
+          "“喻” 见未来 研启新章｜华中科技大学研究生招生咨询会·合肥场，5月9日...",
+          "“喻” 见未来 研启新章｜华中科技大学研究生招生咨询会·郑州场，5月8日...",
+          "“喻” 见未来 研启新章｜华中科技大学研究生招生咨询会重磅启幕",
+          "华中科技大学2026年硕士拟录取考生调档、组织关系转接及信息确认等工作...",
+          "华中科技大学2026年“骨干计划”南疆高校教师专项硕士生招生调剂公告（...",
+          "华中科技大学2026年“骨干计划”南疆高校教师专项硕士生招生调剂公告",
+          "华中科技大学关于2026年博士研究生“申请-考核”制招生选拔有关工作的公...",
+          "华中科技大学2026年硕士研究生接收调剂信息公告",
+          "华中科技大学2026年硕士研究生招生考试复试工作细则（分院系）",
+          "华中科技大学2026年硕士研究生各院系学科（专业）复试分数线"
+        ],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "湖南大学",
+    "namespace": "hnu",
+    "rsshub_status": "ok",
+    "routes_available": [
+      "careers"
+    ],
+    "selected_route": "careers",
+    "selected_rating": "C",
+    "score_ratio": 0.0,
+    "priority": "P0",
+    "admission_url": "https://admi.hnu.edu.cn/",
+    "cms_type": "static",
+    "notes": "",
+    "samples": [
+      {
+        "route": "careers",
+        "url": "https://rsshub-uni-admission.vercel.app/hnu/careers",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 10,
+        "titles": [
+          "麒盛科技股份有限公司",
+          "中建铁路投资建设集团有限公司",
+          "海军工程大学",
+          "中海油田服务股份有限公司",
+          "江苏润阳新能源科技股份有限公司",
+          "贵州路桥集团有限公司",
+          "就业办2019",
+          "卧龙控股集团有限公司",
+          "就业办2019",
+          "湖南启宇原生物科技有限公司"
+        ],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "中南大学",
+    "namespace": "csu",
+    "rsshub_status": "partial_503",
+    "routes_available": [
+      "career",
+      "cse",
+      "mail",
+      "utils"
+    ],
+    "selected_route": "mail",
+    "selected_rating": "B",
+    "score_ratio": 0.1,
+    "priority": "P1",
+    "admission_url": "https://zhaosheng.csu.edu.cn/",
+    "cms_type": "static",
+    "notes": "",
+    "samples": [
+      {
+        "route": "career",
+        "url": "https://rsshub-uni-admission.vercel.app/csu/career",
+        "status": "failed",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": "The read operation timed out"
+      },
+      {
+        "route": "cse",
+        "url": "https://rsshub-uni-admission.vercel.app/csu/cse",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 10,
+        "titles": [
+          "中南大学计算机学院关于组织学生参加第42次CCF-CSP认证的通知",
+          "2025-2026年度计算机学院五四评优拟推名单公示",
+          "关于启动计算机学院2026年课堂教学竞赛的通知",
+          "中国共产主义青年团纪律处分条例（试行）",
+          "计算机学院关于认真做好2026年劳动节假期学生工作的通知",
+          "关于做好中南大学计算机学院2025-2026学年度共青团五四评优的通知",
+          "计算机学院学生会组织2025-2026学年度“优秀共青团干部”名单公示",
+          "中南大学计算机学院2026年硕士研究生调剂复试考核结果公示",
+          "中南大学计算机学院2026年硕士研究生招生增补指标拟录取情况公示",
+          "寝室安全倡议书"
+        ],
+        "error": null
+      },
+      {
+        "route": "mail",
+        "url": "https://rsshub-uni-admission.vercel.app/csu/mail",
+        "status": "ok",
+        "rating": "B",
+        "score_ratio": 0.1,
+        "numerator": 1,
+        "denominator": 10,
+        "titles": [
+          "感谢信：致天心校区新六舍宿管黄峰林同志",
+          "关于新校区B座楼梯处楼体有裂缝",
+          "建议对有色专业链实行“精准招生”",
+          "感谢交通院尹阿姨",
+          "感谢中南大学校车湘A57677的司机江应强师傅",
+          "希望学校图书馆购买波尔",
+          "体测成绩录入错误，记了缺考",
+          "天心校区羽毛球馆",
+          "南校器材室楼顶运动器械的拾取",
+          "关于中南大学交通运输工程学院交通运输系生产实习学生花销和补贴的问题"
+        ],
+        "error": null
+      },
+      {
+        "route": "utils",
+        "url": "https://rsshub-uni-admission.vercel.app/csu/utils",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "国防科技大学",
+    "namespace": "nudt",
+    "rsshub_status": "ok",
+    "routes_available": [
+      "yjszs"
+    ],
+    "selected_route": "yjszs",
+    "selected_rating": "C",
+    "score_ratio": 0.0,
+    "priority": "P0",
+    "admission_url": "https://www.nudt.edu.cn/bkzs/",
+    "cms_type": "static",
+    "notes": "",
+    "samples": [
+      {
+        "route": "yjszs",
+        "url": "https://rsshub-uni-admission.vercel.app/nudt/yjszs",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 10,
+        "titles": [
+          "空天科学学院2026年地方博士研究生“申请-考核”制春季招生创新能力面试成绩",
+          "智能科学学院2026级地方博士研究生“申请-考核”制春季招生创新能力面试成绩",
+          "智能科学学院2026级博士研究生“申请-考核”制春季招生创新能力面试名单",
+          "空天科学学院2026年地方博士研究生“申请-考核”制春季招生创新能力面试名单",
+          "公布理学院2026年博士研究生“申请-考核”制春季选拔招生材料审核成绩",
+          "智能科学学院2026级地方博士研究生“申请-考核”制春季招生专业基础笔试准考名单及材...",
+          "空天科学学院2026年地方博士研究生“申请-考核”制春季招生材料审核成绩及资格审查合...",
+          "公布理学院2026年博士研究生“申请-考核”制春季选拔招生实施方案",
+          "智能科学学院2026级博士研究生“申请-考核”制春季招生工作方案",
+          "空天科学学院2026年地方博士研究生“申请-考核”制春季招生工作方案"
+        ],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "中山大学",
+    "namespace": "sysu",
+    "rsshub_status": "partial_503",
+    "routes_available": [
+      "cse",
+      "ygafz"
+    ],
+    "selected_route": "ygafz",
+    "selected_rating": "C",
+    "score_ratio": 0.0,
+    "priority": "P0",
+    "admission_url": "https://admission.sysu.edu.cn/",
+    "cms_type": "static",
+    "notes": "",
+    "samples": [
+      {
+        "route": "cse",
+        "url": "https://rsshub-uni-admission.vercel.app/sysu/cse",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "ygafz",
+        "url": "https://rsshub-uni-admission.vercel.app/sysu/ygafz",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 10,
+        "titles": [
+          "【粤港澳研究工作坊第65期：技术变革下的技能重塑、技术创新与区域发展】",
+          "中山大学粤港澳发展研究院2026年“申请-考核”制博士 研究生综合考核笔试结果（调剂批次）",
+          "【粤港澳发展高端讲坛第六十四讲：美国从特朗普第一任期到第二任期对华政策的转变与中美关系的发展】",
+          "中山大学粤港澳发展研究院2026年博士 研究生“申请-考核”制综合考核结果公示（第一批）",
+          "中山大学粤港澳发展研究院2026年“申请-考核”制博士研究生综合考核笔试结果",
+          "【粤港澳发展高端讲坛第六十二讲：全球经济困境与中国宏观经济面临的挑战与机遇】",
+          "【粤港澳发展高端讲坛第六十三讲：新形势下非洲市场的机遇与战略布局】",
+          "中山大学粤港澳发展研究院2026年以“申请-考核”制招收博士研究生实施办法",
+          "【粤港澳发展高端讲坛第六十一讲：百工百业两岸论坛之缘起构想与诠释解读】",
+          "【粤港澳发展高端讲坛第六十讲：乘风破浪：中国企业深耕东盟的新机遇和挑战】"
+        ],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "重庆大学",
+    "namespace": "cqu",
+    "rsshub_status": "unavailable",
+    "routes_available": [
+      "index"
+    ],
+    "selected_route": null,
+    "selected_rating": "?",
+    "score_ratio": null,
+    "priority": "P0",
+    "admission_url": "https://zhaosheng.cqu.edu.cn/",
+    "cms_type": "static",
+    "notes": "",
+    "samples": [
+      {
+        "route": "index",
+        "url": "https://rsshub-uni-admission.vercel.app/cqu/index",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "西安交通大学",
+    "namespace": "xjtu",
+    "rsshub_status": "partial_503",
+    "routes_available": [
+      "2yuan",
+      "dean",
+      "dyyy",
+      "ee",
+      "ee-jzxx",
+      "gs",
+      "international",
+      "yz",
+      "zs"
+    ],
+    "selected_route": "zs",
+    "selected_rating": "C",
+    "score_ratio": 0.0,
+    "priority": "P0",
+    "admission_url": "https://zs.xjtu.edu.cn/",
+    "cms_type": "unknown",
+    "notes": "",
+    "samples": [
+      {
+        "route": "zs",
+        "url": "https://rsshub-uni-admission.vercel.app/xjtu/zs",
+        "status": "ok",
+        "rating": "C",
+        "score_ratio": 0.0,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "gs",
+        "url": "https://rsshub-uni-admission.vercel.app/xjtu/gs",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "2yuan",
+        "url": "https://rsshub-uni-admission.vercel.app/xjtu/2yuan",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "dean",
+        "url": "https://rsshub-uni-admission.vercel.app/xjtu/dean",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "dyyy",
+        "url": "https://rsshub-uni-admission.vercel.app/xjtu/dyyy",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "西北农林科技大学",
+    "namespace": "nwafu",
+    "rsshub_status": "unavailable",
+    "routes_available": [
+      "all",
+      "utils"
+    ],
+    "selected_route": null,
+    "selected_rating": "?",
+    "score_ratio": null,
+    "priority": "P0",
+    "admission_url": "https://zhshw.nwafu.edu.cn/",
+    "cms_type": "static",
+    "notes": "",
+    "samples": [
+      {
+        "route": "all",
+        "url": "https://rsshub-uni-admission.vercel.app/nwafu/all",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      },
+      {
+        "route": "utils",
+        "url": "https://rsshub-uni-admission.vercel.app/nwafu/utils",
+        "status": "unavailable",
+        "rating": "?",
+        "score_ratio": null,
+        "numerator": 0,
+        "denominator": 0,
+        "titles": [],
+        "error": null
+      }
+    ]
+  },
+  {
+    "university": "中央民族大学",
+    "namespace": null,
+    "rsshub_status": "no_namespace",
+    "routes_available": [],
+    "selected_route": null,
+    "selected_rating": "N/A",
+    "score_ratio": null,
+    "priority": "P0",
+    "admission_url": "https://www.muc.edu.cn/zsjy/zs/bykzs.htm",
+    "cms_type": "static",
+    "notes": "corrected to valid subpage",
+    "samples": []
+  },
+  {
+    "university": "南开大学",
+    "namespace": null,
+    "rsshub_status": "no_namespace",
+    "routes_available": [],
+    "selected_route": null,
+    "selected_rating": "N/A",
+    "score_ratio": null,
+    "priority": "P0",
+    "admission_url": "https://zsb.nankai.edu.cn/",
+    "cms_type": "static",
+    "notes": "",
+    "samples": []
+  },
+  {
+    "university": "东北大学",
+    "namespace": null,
+    "rsshub_status": "no_namespace",
+    "routes_available": [],
+    "selected_route": null,
+    "selected_rating": "N/A",
+    "score_ratio": null,
+    "priority": "P0",
+    "admission_url": "http://zs.neu.edu.cn/",
+    "cms_type": "webplus",
+    "notes": "corrected to valid portal",
+    "samples": []
+  },
+  {
+    "university": "复旦大学",
+    "namespace": null,
+    "rsshub_status": "no_namespace",
+    "routes_available": [],
+    "selected_route": null,
+    "selected_rating": "N/A",
+    "score_ratio": null,
+    "priority": "P0",
+    "admission_url": "https://ao.fudan.edu.cn/",
+    "cms_type": "webplus",
+    "notes": "",
+    "samples": []
+  },
+  {
+    "university": "山东大学",
+    "namespace": null,
+    "rsshub_status": "no_namespace",
+    "routes_available": [],
+    "selected_route": null,
+    "selected_rating": "N/A",
+    "score_ratio": null,
+    "priority": "P0",
+    "admission_url": "https://www.bkzs.sdu.edu.cn/",
+    "cms_type": "static",
+    "notes": "",
+    "samples": []
+  },
+  {
+    "university": "中国海洋大学",
+    "namespace": null,
+    "rsshub_status": "no_namespace",
+    "routes_available": [],
+    "selected_route": null,
+    "selected_rating": "N/A",
+    "score_ratio": null,
+    "priority": "P0",
+    "admission_url": "https://bkzs.ouc.edu.cn/",
+    "cms_type": "webplus",
+    "notes": "",
+    "samples": []
+  },
+  {
+    "university": "华南理工大学",
+    "namespace": null,
+    "rsshub_status": "no_namespace",
+    "routes_available": [],
+    "selected_route": null,
+    "selected_rating": "N/A",
+    "score_ratio": null,
+    "priority": "P0",
+    "admission_url": "https://admission.scut.edu.cn/",
+    "cms_type": "webplus",
+    "notes": "",
+    "samples": []
+  },
+  {
+    "university": "四川大学",
+    "namespace": null,
+    "rsshub_status": "no_namespace",
+    "routes_available": [],
+    "selected_route": null,
+    "selected_rating": "N/A",
+    "score_ratio": null,
+    "priority": "P0",
+    "admission_url": "https://zs.scu.edu.cn/",
+    "cms_type": "unknown",
+    "notes": "waf_blocked",
+    "samples": []
+  },
+  {
+    "university": "电子科技大学",
+    "namespace": null,
+    "rsshub_status": "no_namespace",
+    "routes_available": [],
+    "selected_route": null,
+    "selected_rating": "N/A",
+    "score_ratio": null,
+    "priority": "P0",
+    "admission_url": "https://zs.uestc.edu.cn/",
+    "cms_type": "static",
+    "notes": "",
+    "samples": []
+  },
+  {
+    "university": "西北工业大学",
+    "namespace": null,
+    "rsshub_status": "no_namespace",
+    "routes_available": [],
+    "selected_route": null,
+    "selected_rating": "N/A",
+    "score_ratio": null,
+    "priority": "P0",
+    "admission_url": "https://zsb.nwpu.edu.cn/",
+    "cms_type": "unknown",
+    "notes": "waf_blocked",
+    "samples": []
+  },
+  {
+    "university": "兰州大学",
+    "namespace": null,
+    "rsshub_status": "no_namespace",
+    "routes_available": [],
+    "selected_route": null,
+    "selected_rating": "N/A",
+    "score_ratio": null,
+    "priority": "P0",
+    "admission_url": "https://zsb.lzu.edu.cn/",
+    "cms_type": "static",
+    "notes": "",
+    "samples": []
+  }
+]
