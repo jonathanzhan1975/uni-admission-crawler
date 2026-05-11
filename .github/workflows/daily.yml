@@ -6,7 +6,10 @@ concurrency:
 
 on:
   schedule:
-    - cron: "0 1 * * *"
+    # 03 分而非 :00：避开 GH Actions cron 整点峰值（:00 高度拥塞，常被延迟或丢弃）
+    # UTC 01:03 = 北京 09:03，仍在 A1 "09:00 ± 5 分钟" 窗口内
+    # 注：GH 官方承认 schedule 在峰值仍可能延迟最多 30-60 分钟，超时不算 SLA 故障
+    - cron: "3 1 * * *"
   workflow_dispatch:
 
 jobs:
