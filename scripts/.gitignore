@@ -1,5 +1,11 @@
-__pycache__/
-apply_corrections.py
-final_audit_fixes.py
-test_hit.py
-validate_fixes.py
+refine_*.py
+probe_*.py
+find_*.py
+debug_*.py
+test_*.py
+validate_*.py
+final_*.py
+reclassify_*.py
+reprobe_*.py
+generate_*.py
+apply_*.py
