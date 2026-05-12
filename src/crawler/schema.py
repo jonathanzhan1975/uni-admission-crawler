@@ -49,6 +49,7 @@ class SourceId(str, Enum):
     MUC_ZSB = "S-39"
     DLUT_ZSB = "S-40"
     NJU_ZSB = "S-41"
+    TONGJI_ZSB = "S-42"
 
 
 class ChannelId(str, Enum):

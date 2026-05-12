@@ -149,3 +149,12 @@ def test_live_nju_zsb_fetcher() -> None:
     result = NjuZsbFetcher().fetch(max_items=5)
     assert result.success, result.error
     assert len(result.items) > 0
+
+
+@pytest.mark.live
+@pytest.mark.skip(reason="Tongji known_degraded: YouZi SaaS requires dynamic MD5 U-Sign; awaiting JS algorithm reverse-eng")
+def test_live_tongji_zsb_fetcher() -> None:
+    from crawler.fetchers.tongji_admissions import TongjiZsbFetcher
+    result = TongjiZsbFetcher().fetch(max_items=5)
+    assert result.success, result.error
+    assert len(result.items) > 0

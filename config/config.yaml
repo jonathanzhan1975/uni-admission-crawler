@@ -244,6 +244,18 @@ sources:
     needs_classification: false
     # SPA + CSRF：2 步流程（GET ajax_get_csrfToken 拿 session → POST ajax_article_list 带 csrf-token header）
 
+  # S-42 同济大学 (known_degraded after 3 attempts):
+  #   Nuxt SPA 后端用第三方 SaaS edudata.cn (YouZi 平台)，
+  #   API 是 POST youzy.youz.cc.page.contentpage.query (categoryId=625e231cc703f31c0b2b4f88, 28 条)
+  #   认证用 U-Sign 动态 MD5 签名（每请求不同，前端 JS 计算）+ U-Dfs:pc.tongji 租户标识，
+  #   不带 sign 或带错 sign 一律 401。
+  #   需要逆向 JS bundle 找签名算法才能续杯，POC 不做。
+  #   fetcher 代码保留在 tongji_admissions.py，如未来拿到 sign 算法 + 恢复实施。
+  # - id: S-42
+  #   type: api
+  #   university: 同济大学
+  #   base_url: https://bkzs.tongji.edu.cn/
+
 channels:
   CH-1:
     enabled: false
