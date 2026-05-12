@@ -229,8 +229,13 @@ sources:
     source_name: 本科招办
     base_url: https://zb.muc.edu.cn/
     needs_classification: false
-  # S-40 大连理工 (known_degraded: zs.dlut.edu.cn/zsNews 是 1.4KB SPA shell,
-  #   内容由 JS 渲染，sample URL /zsNewsDetail?resourceId=... 确认 SPA 模式)
+  - id: S-40
+    type: api
+    university: 大连理工大学
+    source_name: 本科招办
+    base_url: https://zs.dlut.edu.cn/
+    needs_classification: false
+    # SPA 站点但暴露同源 JSON API /apiV2025/portal/disclosure/zsNews/page
   # S-41 南京大学 (known_degraded: bkzs.nju.edu.cn/.../frontList.html?id=...
   #   是 SPA shell，HTML 11KB 内无任何招生公告标题)
 

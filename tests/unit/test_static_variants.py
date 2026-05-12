@@ -132,3 +132,12 @@ def test_live_muc_zsb_fetcher() -> None:
     assert result.success, result.error
     assert len(result.items) > 0
     assert any("2026" in item.title for item in result.items)
+
+
+@pytest.mark.live
+def test_live_dlut_zsb_fetcher() -> None:
+    from crawler.fetchers.dlut_admissions import DlutZsbFetcher
+    result = DlutZsbFetcher().fetch(max_items=5)
+    assert result.success, result.error
+    assert len(result.items) > 0
+    assert any("大连理工" in item.title for item in result.items)
