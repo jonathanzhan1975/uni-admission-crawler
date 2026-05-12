@@ -215,7 +215,20 @@ sources:
     needs_classification: false
 
   # S-37 哈尔滨工业大学（深圳）(known_degraded: SPA, HTML 14KB 内仅导航无公告内容)
-  #   见 docs/sources/hitsz.md
+
+  - id: S-38
+    type: html
+    university: 哈尔滨工业大学（威海）
+    source_name: 本科招办
+    base_url: https://zsb.hitwh.edu.cn/
+    needs_classification: false
+
+  # S-39 中央民族大学 (known_degraded: zb.muc.edu.cn/content/zs/ 仅为分类目录入口
+  #   含「招生政策/报考指南/计划/强基」等分类链接，无统一公告列表页可抓)
+  # S-40 大连理工 (known_degraded: zs.dlut.edu.cn/zsNews 是 1.4KB SPA shell,
+  #   内容由 JS 渲染，sample URL /zsNewsDetail?resourceId=... 确认 SPA 模式)
+  # S-41 南京大学 (known_degraded: bkzs.nju.edu.cn/.../frontList.html?id=...
+  #   是 SPA shell，HTML 11KB 内无任何招生公告标题)
 
 channels:
   CH-1:

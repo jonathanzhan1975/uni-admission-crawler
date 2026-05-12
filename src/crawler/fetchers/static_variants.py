@@ -353,6 +353,24 @@ class NwafuZsbFetcher(StaticFetcher):
     TITLE_SELECTOR = "a"
     DATE_SELECTOR = "span"
 
+class HitwhZsbFetcher(StaticFetcher):
+    """哈工大（威海）招办，自定义 static CMS：
+    <div class="news-list">
+      <div class="news-item">
+        <a class="title" href="/home/article/details?id=NNNN">标题</a>
+        <p class="date">发布时间: YYYY-MM-DD</p>
+      </div>
+    """
+    DEFAULT_SOURCE_ID = SourceId.HITWH_ZSB
+    DEFAULT_SOURCE_NAME = "本科招办"
+    DEFAULT_UNIVERSITY = "哈尔滨工业大学（威海）"
+    BASE_URL = "https://zsb.hitwh.edu.cn/"
+    LIST_PATHS = ("/home/article/index?col=10",)  # 招生简章栏目
+    ITEM_SELECTOR = "div.news-list > div.news-item"
+    TITLE_SELECTOR = "a.title"
+    DATE_SELECTOR = "p.date"
+
+
 class NankaiZsbFetcher(StaticFetcher):
     """南开大学招办，自定义 CMS：a[target=_blank][href^=/20YY-MM-DD/]
     与 BIT 类似，HTML 结构不规则，需 override _parse_html 按 href 模式直接选 a 标签。

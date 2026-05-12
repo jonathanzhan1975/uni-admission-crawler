@@ -7,6 +7,7 @@ from crawler.fetchers.static_variants import (
     NudtZsbFetcher, UestcZsbFetcher, LzuZsbFetcher,
     SysuZsbFetcher, CquZsbFetcher, SduZsbFetcher,
     JluZsbFetcher, NwafuZsbFetcher, NankaiZsbFetcher,
+    HitwhZsbFetcher,
 )
 import pytest
 
@@ -116,5 +117,11 @@ def test_live_nwafu_zsb_fetcher() -> None:
 @pytest.mark.live
 def test_live_nankai_zsb_fetcher() -> None:
     result = NankaiZsbFetcher().fetch(max_items=5)
+    assert result.success, result.error
+    assert len(result.items) > 0
+
+@pytest.mark.live
+def test_live_hitwh_zsb_fetcher() -> None:
+    result = HitwhZsbFetcher().fetch(max_items=5)
     assert result.success, result.error
     assert len(result.items) > 0

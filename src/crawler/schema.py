@@ -45,6 +45,7 @@ class SourceId(str, Enum):
     NWAFU_ZSB = "S-35"
     NANKAI_ZSB = "S-36"
     HITSZ_ZSB = "S-37"
+    HITWH_ZSB = "S-38"
 
 
 class ChannelId(str, Enum):
