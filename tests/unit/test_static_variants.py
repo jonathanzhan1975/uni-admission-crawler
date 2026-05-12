@@ -8,6 +8,7 @@ from crawler.fetchers.static_variants import (
     SysuZsbFetcher, CquZsbFetcher, SduZsbFetcher,
     JluZsbFetcher, NwafuZsbFetcher, NankaiZsbFetcher,
     HitwhZsbFetcher, MucZsbFetcher,
+    BnuZsbFetcher, HnuZsbFetcher, XmuZsbFetcher,
 )
 import pytest
 
@@ -132,6 +133,28 @@ def test_live_muc_zsb_fetcher() -> None:
     assert result.success, result.error
     assert len(result.items) > 0
     assert any("2026" in item.title for item in result.items)
+
+
+@pytest.mark.live
+def test_live_bnu_zsb_fetcher() -> None:
+    result = BnuZsbFetcher().fetch(max_items=5)
+    assert result.success, result.error
+    assert len(result.items) > 0
+
+
+@pytest.mark.live
+def test_live_hnu_zsb_fetcher() -> None:
+    result = HnuZsbFetcher().fetch(max_items=5)
+    assert result.success, result.error
+    assert len(result.items) > 0
+
+
+@pytest.mark.live
+def test_live_xmu_zsb_fetcher() -> None:
+    result = XmuZsbFetcher().fetch(max_items=5)
+    assert result.success, result.error
+    assert len(result.items) > 0
+    assert any("厦门大学" in item.title for item in result.items)
 
 
 @pytest.mark.live

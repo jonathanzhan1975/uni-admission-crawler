@@ -353,6 +353,133 @@ class NwafuZsbFetcher(StaticFetcher):
     TITLE_SELECTOR = "a"
     DATE_SELECTOR = "span"
 
+class BnuZsbFetcher(StaticFetcher):
+    """北师大招办，static CMS。结构：
+    <ul class="reset">
+      <li>
+        <a href="tslx/qjjh/...html">2026年强基计划招生简章</a>
+        <time datetime='2026-04-10'>
+      </li>
+    </ul>
+    """
+    DEFAULT_SOURCE_ID = SourceId.BNU_ZSB
+    DEFAULT_SOURCE_NAME = "本科招办"
+    DEFAULT_UNIVERSITY = "北京师范大学"
+    BASE_URL = "https://admission.bnu.edu.cn/"
+    LIST_PATHS = ("/",)
+    ITEM_SELECTOR = "ul.reset li"
+    TITLE_SELECTOR = "a"
+    DATE_SELECTOR = "time"
+
+
+class HnuZsbFetcher(StaticFetcher):
+    """湖大招办，static CMS。a 自身是 item，标题/日期在子 div 里。
+    <a href="info/1186/7295.htm" class="news-item">
+      <div class="news-timeDate">
+        <div class="news-monthDay">08</div>
+        <div class="news-year">2026-04</div>
+      </div>
+      <div class="news-info"><div class="news-title">标题</div>...</div>
+    </a>
+    """
+    DEFAULT_SOURCE_ID = SourceId.HNU_ZSB
+    DEFAULT_SOURCE_NAME = "本科招办"
+    DEFAULT_UNIVERSITY = "湖南大学"
+    BASE_URL = "https://admi.hnu.edu.cn/"
+    LIST_PATHS = ("/",)
+    ITEM_SELECTOR = "a.news-item"
+
+    def _parse_html(self, html: str) -> list[Item]:
+        soup = BeautifulSoup(html, "lxml")
+        items: list[Item] = []
+        fetched_at = datetime.now(timezone.utc)
+        for a in soup.select(self.ITEM_SELECTOR):
+            href = a.get("href", "")
+            if not href:
+                continue
+            # 标题：news-info 里通常有 title div/span 或仅文本
+            info_node = a.select_one(".news-info, .news-title")
+            title = clean_text(info_node.get_text(" ", strip=True) if info_node else a.get_text(" ", strip=True))
+            # 移除 news-info 里的日期/作者 prefix
+            if not title or len(title) < 5:
+                continue
+            url = canonicalize(href, self.base_url)
+            year_node = a.select_one(".news-year")
+            day_node = a.select_one(".news-monthDay")
+            year_month = clean_text(year_node.get_text(strip=True) if year_node else "")
+            day = clean_text(day_node.get_text(strip=True) if day_node else "")
+            date_text = f"{year_month}-{day}" if year_month and day else year_month
+            pub_date, inferred = self._extract_date(date_text, fetched_at)
+            items.append(Item(
+                item_id=item_id_for_url(url),
+                university=self.university,
+                source_id=self.source_id,
+                source_name=self.source_name,
+                title=title,
+                url=url,
+                pub_date=pub_date,
+                summary=None,
+                fetched_at=fetched_at,
+                date_inferred=inferred,
+                needs_classification=self.needs_classification,
+            ))
+        return items
+
+
+class XmuZsbFetcher(StaticFetcher):
+    """厦大招办，static。结构：
+    <div class="zszx-item-...">  (parent container)
+      <div class="zszx-day">08</div>
+      <div class="zszx-month">2026-05</div>
+      <div class="zszx-item-title">
+        <a href="info/1174/36282.htm" target="_blank" title="标题">标题</a>
+      </div>
+    </div>
+    """
+    DEFAULT_SOURCE_ID = SourceId.XMU_ZSB
+    DEFAULT_SOURCE_NAME = "本科招办"
+    DEFAULT_UNIVERSITY = "厦门大学"
+    BASE_URL = "https://zs.xmu.edu.cn/"
+    LIST_PATHS = ("/",)
+    ITEM_SELECTOR = "div.zszx-item-title"  # 仅 title div, 日期 sibling 通过 parent 找
+
+    def _parse_html(self, html: str) -> list[Item]:
+        soup = BeautifulSoup(html, "lxml")
+        items: list[Item] = []
+        fetched_at = datetime.now(timezone.utc)
+        for title_div in soup.select(self.ITEM_SELECTOR):
+            a = title_div.select_one("a[href]")
+            if not a:
+                continue
+            href = a.get("href", "")
+            title = clean_text(a.get("title", "") or a.get_text(" ", strip=True))
+            if not title or len(title) < 5 or not href:
+                continue
+            url = canonicalize(href, self.base_url)
+            # 日期在 parent 的 sibling .zszx-month + .zszx-day
+            parent = title_div.parent
+            month_node = parent.select_one(".zszx-month") if parent else None
+            day_node = parent.select_one(".zszx-day") if parent else None
+            ym = clean_text(month_node.get_text(strip=True) if month_node else "")
+            d = clean_text(day_node.get_text(strip=True) if day_node else "")
+            date_text = f"{ym}-{d}" if ym and d else ym
+            pub_date, inferred = self._extract_date(date_text, fetched_at)
+            items.append(Item(
+                item_id=item_id_for_url(url),
+                university=self.university,
+                source_id=self.source_id,
+                source_name=self.source_name,
+                title=title,
+                url=url,
+                pub_date=pub_date,
+                summary=None,
+                fetched_at=fetched_at,
+                date_inferred=inferred,
+                needs_classification=self.needs_classification,
+            ))
+        return items
+
+
 class MucZsbFetcher(StaticFetcher):
     """中央民族大学招办，结构特殊：title 在 p.dh 里，href 在父 a 上。
     <li class="ml-item">

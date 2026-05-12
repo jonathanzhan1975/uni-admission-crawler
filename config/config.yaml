@@ -181,10 +181,27 @@ sources:
     base_url: https://www.bkzs.sdu.edu.cn/
     needs_classification: false
 
-  # S-29 北京师范大学 (known_degraded: JS rendered list)
-  # S-30 湖南大学 (known_degraded: JS rendered list)
-  # S-31 西安交通大学 (known_degraded: JS rendered list)
-  # S-32 厦门大学 (known_degraded: JS rendered list)
+  - id: S-29
+    type: html
+    university: 北京师范大学
+    source_name: 本科招办
+    base_url: https://admission.bnu.edu.cn/
+    needs_classification: false
+
+  - id: S-30
+    type: html
+    university: 湖南大学
+    source_name: 本科招办
+    base_url: https://admi.hnu.edu.cn/
+    needs_classification: false
+
+  # S-31 西安交通大学 (真 SPA shell 2.3KB, 0 keyword - known_degraded)
+  - id: S-32
+    type: html
+    university: 厦门大学
+    source_name: 本科招办
+    base_url: https://zs.xmu.edu.cn/
+    needs_classification: false
 
   - id: S-33
     type: html
