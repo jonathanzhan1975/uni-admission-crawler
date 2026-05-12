@@ -354,11 +354,12 @@ class NwafuZsbFetcher(StaticFetcher):
     DATE_SELECTOR = "span"
 
 class BnuZsbFetcher(StaticFetcher):
-    """北师大招办，static CMS。结构：
+    """北师大招办首页含多个 ul.reset（导航/banner/链接/文章），
+    需 filter 出含 <time> 的 li 才是真文章。
     <ul class="reset">
       <li>
         <a href="tslx/qjjh/...html">2026年强基计划招生简章</a>
-        <time datetime='2026-04-10'>
+        <time datetime='2026-04-10'>...</time>
       </li>
     </ul>
     """
@@ -368,8 +369,44 @@ class BnuZsbFetcher(StaticFetcher):
     BASE_URL = "https://admission.bnu.edu.cn/"
     LIST_PATHS = ("/",)
     ITEM_SELECTOR = "ul.reset li"
-    TITLE_SELECTOR = "a"
-    DATE_SELECTOR = "time"
+
+    def _parse_html(self, html: str) -> list[Item]:
+        # BNU 首页 HTML 有不规范结构，lxml 严格解析会丢失多个 ul.reset 和 time tag
+        # 实测 html.parser 正确识别（lxml: 1 ul, 0 time; html.parser: 8 ul, 12 time）
+        soup = BeautifulSoup(html, "html.parser")
+        items: list[Item] = []
+        fetched_at = datetime.now(timezone.utc)
+        for li in soup.select(self.ITEM_SELECTOR):
+            # 只接受含 time 子元素的 li（真文章），跳过纯导航 + banner
+            time_node = li.select_one("time")
+            if time_node is None:
+                continue
+            a = li.select_one("a[href]")
+            if not a:
+                continue
+            href = a.get("href", "")
+            title = clean_text(a.get_text(" ", strip=True) or a.get("title", ""))
+            if not title or len(title) < 5 or not href:
+                continue
+            url = canonicalize(href, self.base_url)
+            # 优先用 time 的 datetime 属性（最稳，含完整 YYYY-MM-DD）
+            dt_attr = time_node.get("datetime", "")
+            date_text = clean_text(dt_attr or time_node.get_text(strip=True))
+            pub_date, inferred = self._extract_date(date_text, fetched_at)
+            items.append(Item(
+                item_id=item_id_for_url(url),
+                university=self.university,
+                source_id=self.source_id,
+                source_name=self.source_name,
+                title=title,
+                url=url,
+                pub_date=pub_date,
+                summary=None,
+                fetched_at=fetched_at,
+                date_inferred=inferred,
+                needs_classification=self.needs_classification,
+            ))
+        return items
 
 
 class HnuZsbFetcher(StaticFetcher):
