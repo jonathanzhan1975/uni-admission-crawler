@@ -44,8 +44,16 @@ class NjuZsbFetcher(BaseFetcher):
         self.http_client = http_client or HttpClient()
 
     def fetch(self, max_items: int = 30) -> FetchResult:
-        """两步流程：先 GET csrfToken 拿 session cookie，再 POST 列表 API。
-        使用 httpx.Client 持久化 cookie。"""
+        """两步流程：
+          Step 1: GET /f/ajax_get_csrfToken → 服务器 Set-Cookie zhaosheng.nju.session.id
+                  并在 response body 返回 {data: "TOKEN,TOKEN,TOKEN,TOKEN", jessionid: "..."}
+          Step 2: POST /f/newsCenter/ajax_article_list 携带:
+                  - cookie (httpx.Client 自动持久化)
+                  - header csrf-token: <第一个逗号分隔的 token>
+                  - header x-requested-with: XMLHttpRequest
+                  - header x-requested-time: <与 URL ts 相同的 ms>
+                  - form body: pageNo / pageSize / categoryId
+        """
         try:
             referer = (
                 f"{self.base_url.rstrip('/')}/static/front/nju/basic/html_cms/"
@@ -57,22 +65,27 @@ class NjuZsbFetcher(BaseFetcher):
                     **DEFAULT_HEADERS,
                     "Origin": self.base_url.rstrip("/"),
                     "Referer": referer,
-                    "X-Requested-With": "XMLHttpRequest",
                 },
                 timeout=10,
                 follow_redirects=True,
             ) as client:
-                # Step 1: GET csrfToken (服务器通过 Set-Cookie 持久化 session)
+                # Step 1: 拿 csrf token + 让服务器 Set-Cookie 持久化 session
                 ts1 = int(datetime.now(timezone.utc).timestamp() * 1000)
-                csrf_resp = client.get(f"/f/ajax_get_csrfToken?ts={ts1}")
-                # 若服务器在 response body 返回 token，可一并提取；这里允许 token 为空
-                csrf_token = ""
-                try:
-                    csrf_token = str(csrf_resp.json().get("data") or csrf_resp.json().get("token") or "")
-                except (ValueError, AttributeError):
-                    pass
+                csrf_resp = client.get(
+                    f"/f/ajax_get_csrfToken?ts={ts1}",
+                    headers={
+                        "X-Requested-With": "XMLHttpRequest",
+                        "X-Requested-Time": str(ts1),
+                    },
+                )
+                csrf_resp.raise_for_status()
+                # data 字段格式: "TOKEN,TOKEN,TOKEN,TOKEN" — 取第一个
+                csrf_data = str(csrf_resp.json().get("data") or "")
+                csrf_token = csrf_data.split(",")[0].strip() if csrf_data else ""
+                if not csrf_token:
+                    raise RuntimeError("nju csrf token missing in response.data")
 
-                # Step 2: POST 列表 API（携带 Step 1 设置的 cookie）
+                # Step 2: POST 列表 API
                 ts2 = int(datetime.now(timezone.utc).timestamp() * 1000)
                 list_resp = client.post(
                     f"/f/newsCenter/ajax_article_list?ts={ts2}",
@@ -81,7 +94,11 @@ class NjuZsbFetcher(BaseFetcher):
                         "pageSize": str(max_items),
                         "categoryId": self.CATEGORY_ID,
                     },
-                    headers={"Csrf-Token": csrf_token} if csrf_token else {},
+                    headers={
+                        "csrf-token": csrf_token,
+                        "X-Requested-With": "XMLHttpRequest",
+                        "X-Requested-Time": str(ts2),
+                    },
                 )
                 list_resp.raise_for_status()
                 save_raw(self.source_id, list_resp.content)
@@ -93,40 +110,29 @@ class NjuZsbFetcher(BaseFetcher):
             return FetchResult(self.source_id, [], False, str(exc))
 
     def _parse_payload(self, payload: dict, max_items: int = 30) -> list[Item]:
-        # 实际 JSON 结构待第一次成功响应后确认；这里覆盖几种常见结构
-        records = (
-            payload.get("data", {}).get("list")
-            or payload.get("data", {}).get("records")
-            or payload.get("list")
-            or payload.get("records")
-            or []
-        )
+        """实际响应结构 (经 reviewer 实测):
+          payload.data.page.list = [{id, title, url, releaseDate (epoch ms), ...}]
+        """
+        page = payload.get("data", {}).get("page", {})
+        records = page.get("list") if isinstance(page, dict) else None
         if not isinstance(records, list):
-            raise RuntimeError("nju admissions api list missing")
+            raise RuntimeError("nju admissions api data.page.list missing")
 
         fetched_at = datetime.now(timezone.utc)
         items: list[Item] = []
         for row in records[:max_items]:
-            # 兼容常见字段名
-            title = clean_text(str(
-                row.get("title") or row.get("articleTitle") or row.get("name") or ""
-            ))
-            article_id = (
-                row.get("id") or row.get("articleId") or row.get("articleID")
-            )
-            if not title or article_id is None:
+            title = clean_text(str(row.get("title") or ""))
+            article_id = row.get("id")
+            url_field = clean_text(str(row.get("url") or ""))
+            if not title or not (article_id or url_field):
                 logger.warning("item_dropped", source_id=self.source_id.value, reason="missing_title_or_url")
                 continue
-            link_url = clean_text(str(row.get("url") or row.get("linkUrl") or ""))
-            if link_url and link_url.startswith("http"):
-                final_url = link_url
-            else:
-                final_url = self.DETAIL_PATH_TEMPLATE.format(article_id=article_id)
+            # 优先用响应里的 url（指向 frontViewArticle1.html?id=...）
+            final_url = url_field or self.DETAIL_PATH_TEMPLATE.format(article_id=article_id)
             canonical_url = canonicalize(final_url, self.base_url)
-            date_field = (
-                row.get("publishTime") or row.get("publishDate") or row.get("createTime") or ""
-            )
-            pub_date, inferred = self._parse_date(str(date_field), fetched_at)
+            # releaseDate 是 epoch ms
+            release_ms = row.get("releaseDate")
+            pub_date, inferred = self._epoch_ms_to_date(release_ms, fetched_at)
             items.append(
                 Item(
                     item_id=item_id_for_url(canonical_url),
@@ -145,6 +151,13 @@ class NjuZsbFetcher(BaseFetcher):
         if not items:
             logger.warning("selector_no_match", source_id=self.source_id.value)
         return items
+
+    def _epoch_ms_to_date(self, value, fetched_at: datetime) -> tuple[datetime, bool]:
+        try:
+            ms = int(value)
+            return datetime.fromtimestamp(ms / 1000, tz=APP_TZ), False
+        except (TypeError, ValueError, OverflowError):
+            return fetched_at, True
 
     def _parse_date(self, text: str, fetched_at: datetime) -> tuple[datetime, bool]:
         if not text:

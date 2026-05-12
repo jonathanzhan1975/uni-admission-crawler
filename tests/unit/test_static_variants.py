@@ -144,7 +144,6 @@ def test_live_dlut_zsb_fetcher() -> None:
 
 
 @pytest.mark.live
-@pytest.mark.skip(reason="NJU known_degraded: API 403 even with full CSRF flow; awaiting full cookie/header details")
 def test_live_nju_zsb_fetcher() -> None:
     from crawler.fetchers.nju_admissions import NjuZsbFetcher
     result = NjuZsbFetcher().fetch(max_items=5)

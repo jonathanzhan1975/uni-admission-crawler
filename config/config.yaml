@@ -236,18 +236,13 @@ sources:
     base_url: https://zs.dlut.edu.cn/
     needs_classification: false
     # SPA 站点但暴露同源 JSON API /apiV2025/portal/disclosure/zsNews/page
-  # S-41 南京大学 (known_degraded after 3 attempts):
-  #   API endpoint discovered (POST /f/newsCenter/ajax_article_list)
-  #   但服务器返回 403 即便：
-  #     1. 包含 Origin + Referer + X-Requested-With headers
-  #     2. 两步流程（先 GET ajax_get_csrfToken 拿 session cookie 再 POST）
-  #     3. 携带 Csrf-Token header
-  #   anti-bot 比预期复杂；fetcher 代码保留在 nju_admissions.py 中，
-  #   如未来用户 F12 给到完整 cookie/header 细节可恢复。
-  # - id: S-41
-  #   type: api
-  #   university: 南京大学
-  #   base_url: https://bkzs.nju.edu.cn/
+  - id: S-41
+    type: api
+    university: 南京大学
+    source_name: 本科招办
+    base_url: https://bkzs.nju.edu.cn/
+    needs_classification: false
+    # SPA + CSRF：2 步流程（GET ajax_get_csrfToken 拿 session → POST ajax_article_list 带 csrf-token header）
 
 channels:
   CH-1:
