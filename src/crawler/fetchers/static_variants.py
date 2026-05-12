@@ -353,6 +353,55 @@ class NwafuZsbFetcher(StaticFetcher):
     TITLE_SELECTOR = "a"
     DATE_SELECTOR = "span"
 
+class MucZsbFetcher(StaticFetcher):
+    """中央民族大学招办，结构特殊：title 在 p.dh 里，href 在父 a 上。
+    <li class="ml-item">
+      <a href="/content/zs/qjjh/...htm">
+        <p class="dh">标题</p>
+        <span>YYYY-MM-DD</span>
+      </a>
+    </li>
+    """
+    DEFAULT_SOURCE_ID = SourceId.MUC_ZSB
+    DEFAULT_SOURCE_NAME = "本科招办"
+    DEFAULT_UNIVERSITY = "中央民族大学"
+    BASE_URL = "https://zb.muc.edu.cn/"
+    LIST_PATHS = ("/content/zs/9a649c21-f0cf-11ee-a4af-00163e36a0b0.htm",)  # 通知公告
+    ITEM_SELECTOR = "li.ml-item"
+
+    def _parse_html(self, html: str) -> list[Item]:
+        soup = BeautifulSoup(html, "lxml")
+        items: list[Item] = []
+        fetched_at = datetime.now(timezone.utc)
+        for li in soup.select(self.ITEM_SELECTOR):
+            a = li.select_one("a[href]")
+            if not a:
+                continue
+            href = a.get("href", "")
+            p_dh = a.select_one("p.dh")
+            span = a.select_one("span")
+            title = clean_text(p_dh.get_text(strip=True) if p_dh else "")
+            if not title or len(title) < 5 or not href:
+                continue
+            url = canonicalize(href, self.base_url)
+            date_text = clean_text(span.get_text(strip=True) if span else "")
+            pub_date, inferred = self._extract_date(date_text, fetched_at)
+            items.append(Item(
+                item_id=item_id_for_url(url),
+                university=self.university,
+                source_id=self.source_id,
+                source_name=self.source_name,
+                title=title,
+                url=url,
+                pub_date=pub_date,
+                summary=None,
+                fetched_at=fetched_at,
+                date_inferred=inferred,
+                needs_classification=self.needs_classification,
+            ))
+        return items
+
+
 class HitwhZsbFetcher(StaticFetcher):
     """哈工大（威海）招办，自定义 static CMS：
     <div class="news-list">
