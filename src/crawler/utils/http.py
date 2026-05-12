@@ -61,6 +61,34 @@ class HttpClient:
             raise RuntimeError("HTTP POST retry loop exited without an error")
         raise last_error
 
+    def post_form(
+        self,
+        url: str,
+        data: Mapping[str, str],
+        headers: Mapping[str, str] | None = None,
+    ) -> httpx.Response:
+        """POST application/x-www-form-urlencoded (some APIs require form, not JSON)."""
+        merged_headers = {**DEFAULT_HEADERS, **dict(headers or {})}
+        last_error: Exception | None = None
+        for attempt in range(self.retries):
+            try:
+                response = httpx.post(
+                    url,
+                    data=dict(data),
+                    headers=merged_headers,
+                    timeout=self.timeout,
+                    follow_redirects=True,
+                    verify=self.verify,
+                )
+                response.raise_for_status()
+                return response
+            except (httpx.HTTPError, httpx.TimeoutException) as exc:
+                last_error = exc
+                self._sleep(attempt)
+        if last_error is None:
+            raise RuntimeError("HTTP POST retry loop exited without an error")
+        raise last_error
+
     def _sleep(self, attempt: int) -> None:
         if attempt < self.retries - 1:
             time.sleep(self.backoffs[min(attempt, len(self.backoffs) - 1)])
