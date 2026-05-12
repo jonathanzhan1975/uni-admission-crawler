@@ -330,3 +330,72 @@ class SduZsbFetcher(StaticFetcher):
     ITEM_SELECTOR = "#tab_a1 li"
     TITLE_SELECTOR = ".tit a"
     DATE_SELECTOR = ".date"
+
+class JluZsbFetcher(StaticFetcher):
+    """吉林大学招办，传统 static CMS（ul.newslist > li > a[title] > span[date]）"""
+    DEFAULT_SOURCE_ID = SourceId.JLU_ZSB
+    DEFAULT_SOURCE_NAME = "本科招办"
+    DEFAULT_UNIVERSITY = "吉林大学"
+    BASE_URL = "https://zsb.jlu.edu.cn/"
+    LIST_PATHS = ("/list/2.html",)
+    ITEM_SELECTOR = "ul.newslist li"
+    TITLE_SELECTOR = "a"
+    DATE_SELECTOR = "span"
+
+class NwafuZsbFetcher(StaticFetcher):
+    """西北农林招办，传统 static（ul.list > li > span[日期]+a[title][href]）"""
+    DEFAULT_SOURCE_ID = SourceId.NWAFU_ZSB
+    DEFAULT_SOURCE_NAME = "本科招办"
+    DEFAULT_UNIVERSITY = "西北农林科技大学"
+    BASE_URL = "https://zhshw.nwsuaf.edu.cn/"
+    LIST_PATHS = ("/zszn/zsdt/index.htm",)
+    ITEM_SELECTOR = "ul.list li"
+    TITLE_SELECTOR = "a"
+    DATE_SELECTOR = "span"
+
+class NankaiZsbFetcher(StaticFetcher):
+    """南开大学招办，自定义 CMS：a[target=_blank][href^=/20YY-MM-DD/]
+    与 BIT 类似，HTML 结构不规则，需 override _parse_html 按 href 模式直接选 a 标签。
+    """
+    DEFAULT_SOURCE_ID = SourceId.NANKAI_ZSB
+    DEFAULT_SOURCE_NAME = "本科招办"
+    DEFAULT_UNIVERSITY = "南开大学"
+    BASE_URL = "https://zsb.nankai.edu.cn/"
+    LIST_PATHS = ("/Index/zhaosheng.html",)
+    ITEM_SELECTOR = "a[target='_blank']"  # placeholder; _parse_html overrides
+
+    def _parse_html(self, html: str) -> list[Item]:
+        soup = BeautifulSoup(html, "lxml")
+        items: list[Item] = []
+        fetched_at = datetime.now(timezone.utc)
+        seen_ids: set[str] = set()
+        # 真实文章链接形如 /2026-04-07/1792（日期/文章ID）
+        date_path_pattern = re.compile(r"^/(20\d{2}-\d{1,2}-\d{1,2})/\d+")
+        for a in soup.select("a[href][target='_blank']"):
+            href = a.get("href", "")
+            m = date_path_pattern.match(href)
+            if not m:
+                continue
+            title = clean_text(a.get_text(" ", strip=True) or a.get("title", ""))
+            if not title or len(title) < 5:
+                continue
+            url = canonicalize(href, self.base_url)
+            if item_id_for_url(url) in seen_ids:
+                continue
+            seen_ids.add(item_id_for_url(url))
+            # 日期直接从 URL path 取（最稳）
+            pub_date, inferred = self._extract_date(m.group(1), fetched_at)
+            items.append(Item(
+                item_id=item_id_for_url(url),
+                university=self.university,
+                source_id=self.source_id,
+                source_name=self.source_name,
+                title=title,
+                url=url,
+                pub_date=pub_date,
+                summary=None,
+                fetched_at=fetched_at,
+                date_inferred=inferred,
+                needs_classification=self.needs_classification,
+            ))
+        return items

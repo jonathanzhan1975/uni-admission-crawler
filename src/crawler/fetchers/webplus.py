@@ -27,7 +27,7 @@ class WebplusFetcher(BaseFetcher):
     BASE_URL: ClassVar[str] = ""
     LIST_PATHS: ClassVar[tuple[str, ...]] = ()
     ITEM_SELECTOR: ClassVar[str] = "ul.wp_article_list > li, .news_list > li, li.news, li.cols, .list-item"
-    DATE_SELECTOR: ClassVar[str] = ".news_meta, .cols_meta, time, .date, .wp_article_time, .article-date"
+    DATE_SELECTOR: ClassVar[str] = ".news_meta, .cols_meta, time, .date, .wp_article_time, .article-date, .Article_PublishDate"
 
     DEFAULT_SOURCE_ID: ClassVar[SourceId]
     DEFAULT_SOURCE_NAME: ClassVar[str] = "本科招办"

@@ -5,7 +5,8 @@ from crawler.fetchers.static_variants import (
     BitZsbFetcher, CauZsbFetcher, TjuZsbFetcher,
     WhuZsbFetcher, HustZsbFetcher, CsuZsbFetcher,
     NudtZsbFetcher, UestcZsbFetcher, LzuZsbFetcher,
-    SysuZsbFetcher, CquZsbFetcher, SduZsbFetcher
+    SysuZsbFetcher, CquZsbFetcher, SduZsbFetcher,
+    JluZsbFetcher, NwafuZsbFetcher, NankaiZsbFetcher,
 )
 import pytest
 
@@ -97,5 +98,23 @@ def test_live_cqu_zsb_fetcher() -> None:
 @pytest.mark.live
 def test_live_sdu_zsb_fetcher() -> None:
     result = SduZsbFetcher().fetch(max_items=5)
+    assert result.success, result.error
+    assert len(result.items) > 0
+
+@pytest.mark.live
+def test_live_jlu_zsb_fetcher() -> None:
+    result = JluZsbFetcher().fetch(max_items=5)
+    assert result.success, result.error
+    assert len(result.items) > 0
+
+@pytest.mark.live
+def test_live_nwafu_zsb_fetcher() -> None:
+    result = NwafuZsbFetcher().fetch(max_items=5)
+    assert result.success, result.error
+    assert len(result.items) > 0
+
+@pytest.mark.live
+def test_live_nankai_zsb_fetcher() -> None:
+    result = NankaiZsbFetcher().fetch(max_items=5)
     assert result.success, result.error
     assert len(result.items) > 0

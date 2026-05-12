@@ -17,14 +17,16 @@ from crawler.fetchers.sjtu_admissions import SjtuAdmissionsFetcher
 from crawler.fetchers.tsinghua_zsb import TsinghuaZsbFetcher
 from crawler.fetchers.webplus_variants import (
     EcnuZsbFetcher, ZjuZsbFetcher, UstcZsbFetcher,
-    OucZsbFetcher, ScutZsbFetcher, NeuZsbFetcher
+    OucZsbFetcher, ScutZsbFetcher, NeuZsbFetcher,
+    SeuZsbFetcher,
 )
 from crawler.fetchers.static_variants import (
     PkuZsbFetcher, RucZsbFetcher, BuaaZsbFetcher,
     BitZsbFetcher, CauZsbFetcher, TjuZsbFetcher,
     WhuZsbFetcher, HustZsbFetcher, CsuZsbFetcher,
     NudtZsbFetcher, UestcZsbFetcher, LzuZsbFetcher,
-    SysuZsbFetcher, CquZsbFetcher, SduZsbFetcher
+    SysuZsbFetcher, CquZsbFetcher, SduZsbFetcher,
+    JluZsbFetcher, NwafuZsbFetcher, NankaiZsbFetcher,
 )
 from crawler.logging_setup import setup_logging
 from crawler.pipeline import archive
@@ -121,6 +123,10 @@ def _build_fetchers(config: AppConfig) -> list[BaseFetcher]:
         SourceId.SYSU_ZSB: SysuZsbFetcher,
         SourceId.CQU_ZSB: CquZsbFetcher,
         SourceId.SDU_ZSB: SduZsbFetcher,
+        SourceId.SEU_ZSB: SeuZsbFetcher,
+        SourceId.JLU_ZSB: JluZsbFetcher,
+        SourceId.NWAFU_ZSB: NwafuZsbFetcher,
+        SourceId.NANKAI_ZSB: NankaiZsbFetcher,
     }
 
     for source in config.sources:

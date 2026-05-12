@@ -186,6 +186,37 @@ sources:
   # S-31 西安交通大学 (known_degraded: JS rendered list)
   # S-32 厦门大学 (known_degraded: JS rendered list)
 
+  - id: S-33
+    type: html
+    university: 吉林大学
+    source_name: 本科招办
+    base_url: https://zsb.jlu.edu.cn/
+    needs_classification: false
+
+  - id: S-34
+    type: html
+    university: 东南大学
+    source_name: 本科招办
+    base_url: https://zsb.seu.edu.cn/
+    needs_classification: false
+
+  - id: S-35
+    type: html
+    university: 西北农林科技大学
+    source_name: 本科招办
+    base_url: https://zhshw.nwsuaf.edu.cn/
+    needs_classification: false
+
+  - id: S-36
+    type: html
+    university: 南开大学
+    source_name: 本科招办
+    base_url: https://zsb.nankai.edu.cn/
+    needs_classification: false
+
+  # S-37 哈尔滨工业大学（深圳）(known_degraded: SPA, HTML 14KB 内仅导航无公告内容)
+  #   见 docs/sources/hitsz.md
+
 channels:
   CH-1:
     enabled: false

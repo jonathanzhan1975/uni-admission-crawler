@@ -72,3 +72,14 @@ class NeuZsbFetcher(WebplusFetcher):
         "/11185/list.htm", # 招生快讯
         "/11186/list.htm", # 招生政策
     )
+
+
+class SeuZsbFetcher(WebplusFetcher):
+    """东南大学招办，标准 webplus 结构（ul.wp_article_list > li.list_item）"""
+    DEFAULT_SOURCE_ID = SourceId.SEU_ZSB
+    DEFAULT_SOURCE_NAME = "本科招办"
+    DEFAULT_UNIVERSITY = "东南大学"
+    BASE_URL = "https://zsb.seu.edu.cn/"
+    LIST_PATHS: ClassVar[tuple[str, ...]] = (
+        "/zxdt_23610/listm.htm",  # 招生动态
+    )

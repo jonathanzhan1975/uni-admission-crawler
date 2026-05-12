@@ -40,6 +40,11 @@ class SourceId(str, Enum):
     HNU_ZSB = "S-30"
     XJTU_ZSB = "S-31"
     XMU_ZSB = "S-32"
+    JLU_ZSB = "S-33"
+    SEU_ZSB = "S-34"
+    NWAFU_ZSB = "S-35"
+    NANKAI_ZSB = "S-36"
+    HITSZ_ZSB = "S-37"
 
 
 class ChannelId(str, Enum):

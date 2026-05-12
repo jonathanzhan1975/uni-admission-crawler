@@ -2,7 +2,8 @@ from __future__ import annotations
 
 from crawler.fetchers.webplus_variants import (
     EcnuZsbFetcher, ZjuZsbFetcher, UstcZsbFetcher,
-    OucZsbFetcher, ScutZsbFetcher, NeuZsbFetcher
+    OucZsbFetcher, ScutZsbFetcher, NeuZsbFetcher,
+    SeuZsbFetcher,
 )
 import pytest
 
@@ -39,5 +40,11 @@ def test_live_scut_zsb_fetcher() -> None:
 @pytest.mark.live
 def test_live_neu_zsb_fetcher() -> None:
     result = NeuZsbFetcher().fetch(max_items=5)
+    assert result.success, result.error
+    assert len(result.items) > 0
+
+@pytest.mark.live
+def test_live_seu_zsb_fetcher() -> None:
+    result = SeuZsbFetcher().fetch(max_items=5)
     assert result.success, result.error
     assert len(result.items) > 0
