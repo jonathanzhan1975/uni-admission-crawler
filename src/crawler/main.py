@@ -17,6 +17,7 @@ from crawler.fetchers.sjtu_admissions import SjtuAdmissionsFetcher
 from crawler.fetchers.dlut_admissions import DlutZsbFetcher
 from crawler.fetchers.nju_admissions import NjuZsbFetcher
 from crawler.fetchers.tongji_admissions import TongjiZsbFetcher
+from crawler.fetchers.xjtu_admissions import XjtuZsbFetcher
 from crawler.fetchers.tsinghua_zsb import TsinghuaZsbFetcher
 from crawler.fetchers.webplus_variants import (
     EcnuZsbFetcher, ZjuZsbFetcher, UstcZsbFetcher,
@@ -152,6 +153,8 @@ def _build_fetchers(config: AppConfig) -> list[BaseFetcher]:
             fetchers.append(NjuZsbFetcher(source.base_url))
         elif source.id == SourceId.TONGJI_ZSB:  # known_degraded; route kept for future
             fetchers.append(TongjiZsbFetcher(source.base_url))
+        elif source.id == SourceId.XJTU_ZSB:
+            fetchers.append(XjtuZsbFetcher(source.base_url))
         elif source.id == SourceId.TSINGHUA_ZSB:
             fetchers.append(TsinghuaZsbFetcher(source.base_url))
         elif source.id in webplus_map:

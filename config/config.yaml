@@ -195,7 +195,13 @@ sources:
     base_url: https://admi.hnu.edu.cn/
     needs_classification: false
 
-  # S-31 西安交通大学 (真 SPA shell 2.3KB, 0 keyword - known_degraded)
+  - id: S-31
+    type: html
+    university: 西安交通大学
+    source_name: 本科招办
+    base_url: https://zs.xjtu.edu.cn/
+    needs_classification: false
+    # 前置 JS challenge WAF（明文 answer 在 HTML 里）后是 webplus 列表
   - id: S-32
     type: html
     university: 厦门大学

@@ -158,6 +158,14 @@ def test_live_xmu_zsb_fetcher() -> None:
 
 
 @pytest.mark.live
+def test_live_xjtu_zsb_fetcher() -> None:
+    from crawler.fetchers.xjtu_admissions import XjtuZsbFetcher
+    result = XjtuZsbFetcher().fetch(max_items=5)
+    assert result.success, result.error
+    assert len(result.items) > 0
+
+
+@pytest.mark.live
 def test_live_dlut_zsb_fetcher() -> None:
     from crawler.fetchers.dlut_admissions import DlutZsbFetcher
     result = DlutZsbFetcher().fetch(max_items=5)
