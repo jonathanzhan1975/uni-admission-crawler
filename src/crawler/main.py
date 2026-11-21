@@ -57,7 +57,7 @@ def run(config: AppConfig) -> RunReport:
     fetch_results = [fetcher.fetch(config.max_items_per_source) for fetcher in fetchers]
     all_items = [item for result in fetch_results if result.success for item in result.items]
 
-    classifier = Classifier(config.google_api_key, "config/prompts/classifier.txt")
+    classifier = Classifier()
     classified_items, degraded = classifier.classify(all_items)
     admission_items = [item for item in classified_items if item.is_admission]
 

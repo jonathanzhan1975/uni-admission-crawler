@@ -83,13 +83,6 @@ sources:
     base_url: https://admission.pku.edu.cn/
     needs_classification: false
 
-  - id: S-15
-    type: html
-    university: 中国人民大学
-    source_name: 本科招办
-    base_url: https://rdzs.ruc.edu.cn/
-    needs_classification: false
-
   - id: S-16
     type: html
     university: 北京航空航天大学
@@ -195,13 +188,6 @@ sources:
     base_url: https://admi.hnu.edu.cn/
     needs_classification: false
 
-  - id: S-31
-    type: html
-    university: 西安交通大学
-    source_name: 本科招办
-    base_url: https://zs.xjtu.edu.cn/
-    needs_classification: false
-    # 前置 JS challenge WAF（明文 answer 在 HTML 里）后是 webplus 列表
   - id: S-32
     type: html
     university: 厦门大学
@@ -229,15 +215,6 @@ sources:
     source_name: 本科招办
     base_url: https://zhshw.nwsuaf.edu.cn/
     needs_classification: false
-
-  - id: S-36
-    type: html
-    university: 南开大学
-    source_name: 本科招办
-    base_url: https://zsb.nankai.edu.cn/
-    needs_classification: false
-
-  # S-37 哈尔滨工业大学（深圳）(known_degraded: SPA, HTML 14KB 内仅导航无公告内容)
 
   - id: S-38
     type: html

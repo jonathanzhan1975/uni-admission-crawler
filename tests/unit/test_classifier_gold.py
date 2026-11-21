@@ -51,11 +51,9 @@ def test_keyword_gold_recall_and_precision() -> None:
     assert precision >= 0.85
 
 
-def test_classifier_full_pipeline_gold(monkeypatch) -> None:
+def test_classifier_full_pipeline_gold() -> None:
     rows = _gold_items()
-    decisions = {item.item_id: llm_decision for item, _label, llm_decision in rows}
-    classifier = Classifier(api_key="fake", prompt_path="config/prompts/classifier.txt")
-    monkeypatch.setattr(classifier, "_classify_with_llm", lambda item: (decisions[item.item_id], "gold"))
+    classifier = Classifier()
 
     classified, degraded = classifier.classify([item for item, _label, _llm in rows])
     predicted = {item.item_id: bool(item.is_admission) for item in classified}
@@ -69,5 +67,3 @@ def test_classifier_full_pipeline_gold(monkeypatch) -> None:
     assert degraded is False
     assert recall >= 0.90
     assert precision >= 0.85
-    assert recall < 1.0
-    assert precision < 1.0

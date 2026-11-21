@@ -43,7 +43,6 @@ def _config() -> AppConfig:
         raw_retention_days=30,
         lark_webhook_url=None,
         serverchan_sendkey="SCT_TEST",
-        google_api_key=None,
     )
 
 
@@ -86,14 +85,14 @@ def test_e2e_single_source_failure_isolated(monkeypatch, isolated_dedup, sample_
     assert report.deduped_count == 1
 
 
-def test_e2e_llm_degraded_still_pushes(monkeypatch, isolated_dedup, sample_item) -> None:
+def test_e2e_keyword_filter_still_pushes(monkeypatch, isolated_dedup, sample_item) -> None:
     item = replace(sample_item, needs_classification=True)
     monkeypatch.setattr(crawler_main, "_build_fetchers", lambda _cfg: [FakeFetcher(FetchResult(SourceId.TSINGHUA_NEWS, [item], True))])
     monkeypatch.setattr(crawler_main, "_build_pushers", lambda _cfg: [FakePusher(ChannelId.SERVERCHAN, True)])
 
     report = crawler_main.run(_config())
 
-    assert report.classify_degraded is True
+    assert report.classify_degraded is False
     assert report.push_results[0].success is True
 
 

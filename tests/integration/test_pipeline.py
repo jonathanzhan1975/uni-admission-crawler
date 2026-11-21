@@ -6,7 +6,7 @@ from crawler.pipeline.render import render
 
 
 def test_classify_dedup_render_pipeline(tmp_path, sample_item) -> None:
-    classifier = Classifier(api_key=None, prompt_path="config/prompts/classifier.txt")
+    classifier = Classifier()
     classified, degraded = classifier.classify([sample_item])
     new_items = Dedup(str(tmp_path / "state.db")).filter_new([item for item in classified if item.is_admission])
 

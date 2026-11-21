@@ -35,7 +35,6 @@ class AppConfig:
     raw_retention_days: int
     lark_webhook_url: Optional[str]
     serverchan_sendkey: Optional[str]
-    google_api_key: Optional[str]
 
 
 def load_config(yaml_path: str = "config/config.yaml") -> AppConfig:
@@ -67,5 +66,4 @@ def load_config(yaml_path: str = "config/config.yaml") -> AppConfig:
         raw_retention_days=int(data.get("raw_retention_days", 30)),
         lark_webhook_url=os.getenv("LARK_WEBHOOK_URL"),
         serverchan_sendkey=os.getenv("SERVERCHAN_SENDKEY"),
-        google_api_key=os.getenv("GOOGLE_API_KEY"),
     )
